@@ -1,0 +1,179 @@
+body {
+  background-color: #ccff99;
+  /* Adiciona um espaçamento no topo para não esconder o conteúdo atrás da navbar */
+  padding-top: 70px;
+}
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: #284d00;
+}
+.centro {
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+/* Barra de navegação */
+.navbar {
+  position: fixed; /* Fixa o elemento na tela */
+  top: 0; /* Alinha no topo */
+  left: 0; /* Garante que ocupe toda a largura */
+  width: 100%;
+  background-color: #4d9900;
+  border-radius: 5px;
+  font-size: 22px;
+  padding: 8px 0; /* Adiciona um pouco de preenchimento vertical */
+  z-index: 1000; /* Garante que a navbar fique na frente de outros elementos */
+}
+a {
+  text-decoration: none;
+  color: #214100;
+}
+
+/* Links na navbar */
+.nav-item {
+  position: relative; /* Permite posicionar o .underline em relação a este container */
+  display: inline-block; /* Faz com que os itens fiquem lado a lado */
+  margin: 0 15px; /* Mantém o espaçamento que você pediu */
+}
+
+/* Efeito de sublinhado */
+.underline {
+  position: absolute;
+  bottom: -2px; /* Posição abaixo do link (mais próximo) */
+  left: 0;
+  height: 2px;
+  background-color: #214100; /* Mesma cor do texto do link */
+  width: 0; /* Começa com largura zero */
+}
+
+/* Barra de pesquisa */
+.search {
+  max-width: 500px; /* Largura máxima de 500 pixels */
+  margin: 0 auto; /* Centraliza a barra de pesquisa */
+  position: relative;
+}
+
+/* Campo de input da barra de pesquisa */
+.search input {
+  width: 100%; /* Ocupa toda a largura do container */
+  padding: 1rem 1.5rem; /* Adiciona um espaço interno na barra de pesquisa */
+  border: 2px solid rgba(76, 175, 80, 0.2); /* Borda verde semi-transparente */
+  border-radius: 50px; /* Deixa a borda arredondada */
+  font-size: 1rem; /* Deixa a fonte com 1rem(16 pixels) */
+  background: rgba(255, 255, 255, 80, 0.1); /* Fundo branco semi-transparente */
+  transition: all 0.3s ease; /* Transição suave de entrada e saída */
+}
+
+/* Quando a barra de pesquisa está selecionada para digitação */
+.search input:focus {
+  outline: none; /* Remove o outline padrão */
+  border-color: #4caf50; /* Muda a borda para verde */
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1); /* Faz uma borda(anel de foco) personalizada */
+}
+
+/* Grid onde estarão as plantas */
+.plant-grid {
+  display: grid; /*Ativa o CSS grid*/
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(350px, 1fr)
+  ); /*Permite a responsividade do grid*/
+  gap: 2rem; /*Adiciona um espaçamento entre os card*/
+  margin-top: 3rem; /*Adiciona uma margem no topo dos cards*/
+}
+
+/* Cartão da planta */
+.plant-card {
+  background: rgba(255, 255, 255, 0.9); /*Fundo branco semi-transparente*/
+  border-radius: 16px; /*Borda arredondada*/
+  overflow: hidden; /*Corta o conteúdo que vaza do card*/
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /*Sompra sutil no card*/
+  transition: all 0.3s ease; /*Adiciona transições suaves*/
+  border: 1px solid rgba(76, 175, 80, 0.1); /*Adiciona uma borda sutil*/
+}
+
+/* Quando o mouse está posicionado em cima do cartão da planta */
+.plant-card:hover {
+  transform: translateY(-8px); /* Move 8px para cima */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
+}
+
+/* Imagem da planta */
+.plant-image {
+  width: 100%; /* Ocupa toda largura do card */
+  height: 250px; /* Altura fixa para uniformidade */
+  background-size: cover; /* Imagem cobre toda área, mantendo proporção */
+  background-position: center; /* Centraliza a imagem */
+  position: relative; /* Para o pseudo-elemento ::after */
+}
+
+/* Adiciona um "elemento fantasma", que faz com que tenha um gradiente de opacidade de cima para baixo */
+.plant-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+/* Informação sobre a planta */
+.plant-info {
+  padding: 1.5rem; /* 24px de espaçamento interno */
+}
+
+/* Nome da planta */
+.plant-name {
+  font-size: 1.3rem; /* Fonte de aproximadamente 21px */
+  font-weight: 600; /* Deixa a fonte mais larga */
+  color: #1b5e20; /* Deixa a fonte verde escuro */
+  margin-bottom: 0.5rem; /* Adiciona uma margem de 8 pixels abaixo */
+}
+
+/* Nome científico */
+.plant-scientific {
+  font-style: italic; /* Fonte em Itálico (padrão científico) */
+  color: #4caf50; /* Deixa a fonte verde */
+  font-size: 0.9rem; /* Diminui o tamanho da fonte */
+  margin-bottom: 1rem; /* Adiciona uma margem inferior de 16 pixels */
+}
+
+/* Descrição da planta */
+.plant-description {
+  color: #2e4e2e; /* Deixa a fonte verde escuro */
+  font-size: 0.95rem; /* Diminui o tamanho da fonte */
+  line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
+}
+
+/* Rodapé do site */
+footer {
+  background: linear-gradient(
+    135deg,
+    #2e7d32 0%,
+    #1b5e20 100%
+  ); /* Fundo com um gradiente de verde claro para um verde mais escuro */
+  color: white; /* Fonte dos textos branca */
+  text-align: center; /* Alinha os textos no centro do rodapé */
+  padding: 2rem 0; /* Cria uma distância entre o rodapé e o resto da página */
+  margin-top: 4rem; /* Margem no topo do rodapé */
+}
+
+/* Ajuste para o tamanho de tela */
+@media screen and (max-width: 701px) {
+  .nav-links {
+    display: none;
+  }
+
+  h1 {
+    font-size: 2.5rem; /* 40px, um pouco menor que os 50px originais */
+  }
+
+  .plant-grid {
+    grid-template-columns: 1fr;
+  }
+}

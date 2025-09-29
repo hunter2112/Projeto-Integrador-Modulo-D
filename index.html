@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herbário Digital</title>
+    <!--Faz com que as configuações de estilo sejam "puxadas" do arquivo "styles.css"-->
+    <link rel="stylesheet" href="./styles.css" />
+    <!--Link que adiciona um ícone à guia da página-->
+    <link
+      rel="shortcut icon"
+      type="imagex/png"
+      href="./images/plant_icon.png"
+    />
+  </head>
+  <body>
+    <nav class="navbar centro">
+      <!--Barra de Navegação centralizada com links direcionais-->
+      <div class="nav-item">
+        <a class="navlink" href="#">Cadastro</a>
+        <div class="underline"></div>
+      </div>
+      <div class="nav-item">
+        <a class="navlink" href="#">Pesquisa</a>
+        <div class="underline"></div>
+      </div>
+      <div class="nav-item">
+        <a class="navlink" href="#">Ver Todas as Plantas</a>
+        <div class="underline"></div>
+      </div>
+    </nav>
+    <main>
+      <div>
+        <h1 id="titulo">Herbário Digital</h1>
+        <!--Título principal do site-->
+      </div>
+      <div class="search">
+        <!--Barra de pesquisa-->
+        <input type="search" placeholder="Pesquisar plantas..." />
+      </div>
+      <section class="plant-grid"></section>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
