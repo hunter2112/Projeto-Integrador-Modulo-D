@@ -14,8 +14,8 @@
     />
   </head>
   <body>
+    <!--Barra de Navegação centralizada com links direcionais-->
     <nav class="navbar centro">
-      <!--Barra de Navegação centralizada com links direcionais-->
       <div class="nav-item">
         <a class="navlink" href="#">Cadastro</a>
         <div class="underline"></div>
@@ -29,6 +29,7 @@
         <div class="underline"></div>
       </div>
     </nav>
+    <!-- Conteúdo principal do site -->
     <main>
       <div>
         <h1 id="titulo">Herbário Digital</h1>
@@ -38,8 +39,44 @@
         <!--Barra de pesquisa-->
         <input type="search" placeholder="Pesquisar plantas..." />
       </div>
-      <section class="plant-grid"></section>
+      <section class="plant-grid" id="plantas">
+        <!-- Alecrim -->
+        <div class="plant-card" data-name="alecrim">
+          <div
+            class="plant-image"
+            style="background-image: url('./img/alecrim.jpg')"
+          ></div>
+          <div class="plant-info">
+            <h3 class="plant-name">Alecrim</h3>
+            <p class="plant-scientific">Salvia rosmarinus</p>
+            <p class="plant-description">
+              Arbusto aromatico muito usado na culinaria e fitoterapia.
+            </p>
+            <p class="plant-uses">
+              Melhora a concentracao, usado em oleos essenciais e chas.
+            </p>
+          </div>
+        </div>
+        <!-- Camomila -->
+        <div class="plant-card" data-name="camomila">
+          <div
+            class="plant-image"
+            style="background-image: url('./img/camomila.jpg')"
+          ></div>
+          <div class="plant-info">
+            <h3 class="plant-name">Camomila</h3>
+            <p class="plant-scientific">Matricaria chamomilla</p>
+            <p class="plant-description">
+              Planta com flores pequenas, usada para chas calmantes.
+            </p>
+            <p class="plant-uses">
+              Tratamento de insonia, ansiedade, colicas e irritacoes leves.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
+    <!-- Rodapé do site -->
     <footer></footer>
     <script src="script.js"></script>
   </body>
