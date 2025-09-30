@@ -1,111 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
   <meta charset="UTF-8">
   <title>Cadastro de Planta - Herbário Digital</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f4f4f4;
-    }
-    h1 {
-      text-align: center;
-    }
-    form {
-      background-color: #fff;
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input[type="text"],
-    textarea,
-    input[type="file"] {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-    input[type="submit"] {
-      margin-top: 20px;
-      background-color: #28a745;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    input[type="submit"]:hover {
-      background-color: #218838;
-    }
-    #mensagem {
-      margin-top: 20px;
-      text-align: center;
-    }
-  </style>
+
+  <!-- Faz com que as configurações de estilo sejam "puxadas" do arquivo "styles.css" -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Link que adiciona um ícone à guia da página -->
+  <link
+    rel="shortcut icon"
+    type="imagex/png"
+    href="./img/plant_icon.png"
+  />
 </head>
+
 <body>
 
   <h1>Cadastro de Planta - Herbário Digital</h1>
 
+  <!-- Formulário com ID "formPlanta" -->
+  <!-- enctype="multipart/form-data" é necessário para envio de arquivos -->
   <form id="formPlanta" enctype="multipart/form-data">
+
+    <!-- Nome comum da planta -->
     <label for="nome">Nome comum:</label>
     <input type="text" id="nome" name="nome" required>
 
+    <!-- Nome científico -->
     <label for="nome_cientifico">Nome científico:</label>
     <input type="text" id="nome_cientifico" name="nome_cientifico" required>
 
+    <!-- Descrição da planta -->
     <label for="descricao">Descrição:</label>
     <textarea id="descricao" name="descricao" required></textarea>
 
+    <!-- Características da planta -->
     <label for="caracteristicas">Características:</label>
     <textarea id="caracteristicas" name="caracteristicas" required></textarea>
 
+    <!-- Uso medicinal, ornamental etc. -->
     <label for="uso">Uso:</label>
     <textarea id="uso" name="uso"></textarea>
 
+    <!-- Upload de imagem da planta -->
     <label for="imagem">Imagem (JPG/PNG):</label>
     <input type="file" id="imagem" name="imagem" accept="image/*" required>
 
+    <!-- Botão de envio -->
     <input type="submit" value="Cadastrar Planta">
   </form>
 
+  <!-- Div onde vamos exibir mensagens de sucesso/erro -->
   <div id="mensagem"></div>
 
+  <!-- SCRIPT JAVASCRIPT -->
   <script>
+    // Adiciona um evento ao formulário que será executado no momento do envio
     document.getElementById("formPlanta").addEventListener("submit", function (e) {
-      e.preventDefault(); // Impede o envio tradicional
+      e.preventDefault(); // Impede que a página seja recarregada (comportamento padrão do formulário)
 
-      const form = e.target;
-      const formData = new FormData(form);
+      const form = e.target;               // Pega o formulário enviado
+      const formData = new FormData(form); // Cria um objeto FormData com os dados do formulário (inclusive o arquivo)
 
-      fetch("/cadastrar_planta", {
-        method: "POST",
-        body: formData
+      // Envia os dados usando fetch para a rota do backend
+      fetch("/cadastrar_planta", { // <- Você precisa ter essa rota no backend
+        method: "POST",            // Método POST para envio dos dados
+        body: formData             // Corpo da requisição com o FormData (texto + imagem)
       })
       .then(response => {
         if (!response.ok) {
+          // Se a resposta não for OK, lança um erro
           throw new Error("Erro ao enviar os dados.");
         }
-        return response.text(); // ou .json() se o servidor retornar JSON
+        return response.text(); // Pode usar .json() se o backend retornar JSON
       })
       .then(data => {
+        // Se deu tudo certo, exibe mensagem de sucesso
         document.getElementById("mensagem").innerHTML = `<p style="color:green;">Cadastro realizado com sucesso!</p>`;
-        form.reset();
+        form.reset(); // Limpa o formulário
       })
       .catch(error => {
+        // Se houve erro, exibe mensagem de erro
         document.getElementById("mensagem").innerHTML = `<p style="color:red;">Erro: ${error.message}</p>`;
       });
     });
