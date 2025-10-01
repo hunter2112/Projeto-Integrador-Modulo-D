@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Herbário Digital</title>
     <!--Faz com que as configuações de estilo sejam "puxadas" do arquivo "styles.css"-->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <!--Link que adiciona um ícone à guia da página-->
     <link
       rel="shortcut icon"
       type="imagex/png"
-      href="./img/plant_icon.png  "
+      href="assets/img/plant_icon.png"
     />
   </head>
   <body>
@@ -21,15 +21,15 @@
         <div class="underline"></div>
       </div>
       <div class="nav-item">
-        <a class="navlink" href="#">Pesquise pelo nome</a>
+        <a class="navlink" href="pesquisa_nome.html">Pesquise pelo nome</a>
         <div class="underline"></div>
       </div>
       <div class="nav-item">
-        <a class="navlink" href="#">Pesquise pelo uso</a>
+        <a class="navlink" href="pesquisa_uso.html">Pesquise pelo uso</a>
         <div class="underline"></div>
       </div>
       <div class="nav-item">
-        <a class="navlink" href="#">Ver Todas as Plantas</a>
+        <a class="navlink" href="catalogo.html">Ver Todas as Plantas</a>
         <div class="underline"></div>
       </div>
     </nav>
@@ -43,45 +43,83 @@
         <!--Barra de pesquisa-->
         <input type="search" placeholder="Pesquisar plantas..." />
       </div>
-      <section class="plant-grid" id="plantas">
-        <!-- Alecrim -->
-        <div class="plant-card" data-name="alecrim">
-          <div
-            class="plant-image"
-            style="background-image: url('./img/alecrim.jpg')"
-          ></div>
-          <div class="plant-info">
-            <h3 class="plant-name">Alecrim</h3>
-            <p class="plant-scientific">Salvia rosmarinus</p>
-            <p class="plant-description">
-              Arbusto aromatico muito usado na culinaria e fitoterapia.
-            </p>
-            <p class="plant-uses">
-              Melhora a concentracao, usado em oleos essenciais e chas.
-            </p>
+      <div class="carousel">
+        <div class="slides">
+          <div id="slide-1">
+            <img class="plant-image" id="planta-menu-1" src="assets/img/alecrim.jpg" alt="">
+            <div class="plant-info">
+              <h3 class="plant-name">Alecrim</h3>
+              <p class="plant-scientific">Salvia rosmarinus</p>
+              <p class="plant-description">
+                Arbusto aromático muito usado na culinária e fitoterapia.
+              </p>
+              <p class="plant-uses">
+                Melhora a concentração, usado em óleos essenciais e chás.
+              </p>
           </div>
-        </div>
-        <!-- Camomila -->
-        <div class="plant-card" data-name="camomila">
-          <div
-            class="plant-image"
-            style="background-image: url('./img/camomila.jpg')"
-          ></div>
-          <div class="plant-info">
-            <h3 class="plant-name">Camomila</h3>
-            <p class="plant-scientific">Matricaria chamomilla</p>
-            <p class="plant-description">
-              Planta com flores pequenas, usada para chas calmantes.
-            </p>
-            <p class="plant-uses">
-              Tratamento de insonia, ansiedade, colicas e irritacoes leves.
-            </p>
           </div>
-        </div>
+          <div id="slide-2">
+            <img class="plant-image" id="planta-menu-2" src="assets/img/camomila.jpg" alt="">
+            <div class="plant-info">
+              <h3 class="plant-name">Camomila</h3>
+              <p class="plant-scientific">Matricaria chamomilla</p>
+              <p class="plant-description">
+                Planta com flores pequenas, usada para chás calmantes.
+              </p>
+              <p class="plant-uses">
+                Tratamento de insônia, ansiedade, cólicas e irritações leves.
+              </p>
+            </div>
+          </div>
+          <div id="slide-3">
+            <img class="plant-image" id="planta-menu-2" src="assets/img/camomila.jpg" alt="">
+            <div class="plant-info">
+              <h3 class="plant-name">Planta3</h3>
+              <p class="plant-scientific">Planta3</p>
+              <p class="plant-description">
+                Planta
+              </p>
+              <p class="plant-uses">
+                Tratamento
+              </p>
+            </div>
+          </div>
+          <div id="slide-4">
+            <img class="plant-image" id="planta-menu-2" src="assets/img/camomila.jpg" alt="">
+            <div class="plant-info">
+              <h3 class="plant-name">Planta4</h3>
+              <p class="plant-scientific">Planta4</p>
+              <p class="plant-description">
+                Planta
+              </p>
+              <p class="plant-uses">
+                Tratamento
+              </p>
+            </div>
+          </div>
+          <div id="slide-5">
+            <img class="plant-image" id="planta-menu-2" src="assets/img/camomila.jpg" alt="">
+            <div class="plant-info">
+              <h3 class="plant-name">Planta5</h3>
+              <p class="plant-scientific">Planta5</p>
+              <p class="plant-description">
+                Planta
+              </p>
+              <p class="plant-uses">
+                Tratamento
+              </p>
+            </div>
+          </div>
+      </div>
+        <a href="#slide-1">1</a>
+        <a href="#slide-2">2</a>
+        <a href="#slide-3">3</a>
+        <a href="#slide-4">4</a>
+        <a href="#slide-5">5</a>
       </section>
     </main>
     <!-- Rodapé do site -->
     <footer></footer>
-    <script src="js/script.js"></script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
