@@ -173,6 +173,9 @@ footer {
   text-align: center; /* Alinha os textos no centro do rodapé */
   padding: 2rem 0; /* Cria uma distância entre o rodapé e o resto da página */
   margin-top: 4rem; /* Margem no topo do rodapé */
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 }
 
 /* Ajuste para o tamanho de tela */
@@ -294,4 +297,3 @@ img {
     justify-content: center;
   }
 }
-
