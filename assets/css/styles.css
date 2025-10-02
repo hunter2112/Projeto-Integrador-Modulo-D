@@ -1,5 +1,6 @@
 body {
-  background-color: #ccff99;
+  height: 900px;
+  background:linear-gradient(135deg,#c9fa99,#9bc96c,#739e47) ;
   /* Adiciona um espaçamento no topo para não esconder o conteúdo atrás da navbar */
   padding-top: 70px;
 }
@@ -26,7 +27,12 @@ h1 {
   top: 0; /* Alinha no topo */
   left: 0; /* Garante que ocupe toda a largura */
   width: 100%;
-  background-color: #4d9900;
+  background: linear-gradient(
+    135deg,
+    #2e7d32 0%,
+    #1b5e20 100%
+  );
+  /*background-color: #4d9900;*/
   border-radius: 5px;
   font-size: 22px;
   padding: 8px 0; /* Adiciona um pouco de preenchimento vertical */
@@ -34,7 +40,7 @@ h1 {
 }
 a {
   text-decoration: none;
-  color: #214100;
+  color: #ffffff;
 }
 
 /* Links na navbar */
@@ -50,7 +56,7 @@ a {
   bottom: -2px; /* Posição abaixo do link (mais próximo) */
   left: 0;
   height: 2px;
-  background-color: #214100; /* Mesma cor do texto do link */
+  background-color: #ffffff; /* Mesma cor do texto do link */
   width: 0; /* Começa com largura zero */
 }
 
@@ -115,18 +121,6 @@ a {
   position: relative;/* Para o pseudo-elemento ::after */
 }
 
-/* Adiciona um "elemento fantasma", que faz com que tenha um gradiente de opacidade de cima para baixo */
-.plant-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.1) 100%
-  );
-}
-
 /* Informação sobre a planta */
 .plant-info{
   background-color: white;
@@ -172,7 +166,7 @@ footer {
   color: white; /* Fonte dos textos branca */
   text-align: center; /* Alinha os textos no centro do rodapé */
   padding: 2rem 0; /* Cria uma distância entre o rodapé e o resto da página */
-  margin-top: 4rem; /* Margem no topo do rodapé */
+   margin-top: 4rem; /* Margem no topo do rodapé */
   bottom: 0;
   position: absolute;
   width: 100%;
@@ -205,14 +199,11 @@ footer {
  display: flex;
   border-radius: 20px;
   overflow-x: auto;
-
-  
-  
   
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   
-  /*
+/*
   scroll-snap-points-x: repeat(300px);
   scroll-snap-type: mandatory;
   */
@@ -223,11 +214,15 @@ footer {
 }
 .slides::-webkit-scrollbar-thumb {
   margin-top: 10px;
-  background: rgb(0, 104, 26);
+  background: #1b5e20;
   border-radius: 10px;
 }
+.slides::-webkit-scrollbar-thumb:hover {
+  background: #1b5e20;
+
+}
+
 .slides::-webkit-scrollbar-track {
-  margin-top: 10px;
   background: transparent;
 }
 .slides > div {
@@ -247,20 +242,6 @@ footer {
   font-size: 100px;
 }
 
-.author-info {
-  background: rgba(0, 0, 0, 0.75);
-  color: white;
-  padding: 0.75rem;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin: 0;
-}
-.author-info a {
-  color: white;
-}
 img {
   object-fit: cover;
   position: absolute;
@@ -271,23 +252,32 @@ img {
 }
 
 .carousel > a {
+  color: #1b5e20;
+  font-family: fantasy;
   display: inline-flex;
-  width: 1.5rem;
-  height: 1.5rem;
-  background: white;
+  width: 2.5rem;
+  height: 0.8rem;
+  background: #83af5a;
   text-decoration: none;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  margin: 0 0 0.5rem 0;
+  border-radius: 30%;
+  margin-top: 5px;
   position: relative;
 }
 .carousel > a:active {
   top: 1px;
 }
-.carousel > a:focus {
-  background: #000;
+.carousel > a:hover{
+  background-color: #1b5e20;
+  transform: scaleX(1.1);
+  transition: transform 50ms ease;
 }
+.carousel > a:focus {
+  background-color: rgb(2, 48, 13);
+  transition: color 2s ease;
+}
+
 
 /* Don't need button navigation */
 @supports (scroll-snap-type) {
