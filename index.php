@@ -23,14 +23,15 @@
     <main class="text-white bg-white row g-4 justify-content-md-center"> 
         <section class="section-style-2"> 
 
-        <?php
-            require_once('./app/template/title.php');
-            require_once('./app/template/app.php');
-        ?>    
+            <?php
+                require_once('./app/template/title.php');
+                require_once('./app/app.php');
+            ?>    
         
         </section>
-
     </main>
+
+    <?php require_once('./app/template/footer.php'); ?>
 </body>
 
 </html>
