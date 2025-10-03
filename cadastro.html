@@ -3,58 +3,84 @@
   <head>
   <meta charset="UTF-8">
   <title>Cadastro de Planta - Herbário Digital</title>
-
   <!-- Faz com que as configurações de estilo sejam "puxadas" do arquivo "styles.css" -->
-  <link rel="stylesheet" href="assets/css/styles.css" />
-
+  <link rel="stylesheet" href="assets/css/base.css" />
   <!-- Link que adiciona um ícone à guia da página -->
   <link
     rel="shortcut icon"
     type="imagex/png"
-    href="./img/plant_icon.png"
+    href="assets/img/plant_icon.png"
   />
 </head>
 
 <body>
-
+  <!--Barra de Navegação centralizada com links direcionais-->
+    <nav class="navbar centro">
+      <div class="nav-item">
+        <a class="navlink" href="cadastro.html">Cadastro</a>
+        <div class="underline"></div>
+      </div>
+      <div class="nav-item">
+        <a class="navlink" href="">Pesquise pelo nome</a>
+        <div class="underline"></div>
+      </div>
+      <div class="nav-item">
+        <a class="navlink" href="">Pesquise pelo uso</a>
+        <div class="underline"></div>
+      </div>
+      <div class="nav-item">
+        <a class="navlink" href="">Ver Todas as Plantas</a>
+        <div class="underline"></div>
+      </div>
+    </nav>
   <h1>Cadastro de Planta - Herbário Digital</h1>
-
   <!-- Formulário com ID "formPlanta" -->
   <!-- enctype="multipart/form-data" é necessário para envio de arquivos -->
-  <form id="formPlanta" enctype="multipart/form-data">
 
+  <form id="formPlanta" enctype="multipart/form-data">
     <!-- Nome comum da planta -->
     <label for="nome">Nome comum:</label>
-    <input type="text" id="nome" name="nome" required>
-
+    <input class="texto" type="text" id="nome" name="nome" required> <br>
+    <br>
     <!-- Nome científico -->
     <label for="nome_cientifico">Nome científico:</label>
-    <input type="text" id="nome_cientifico" name="nome_cientifico" required>
-
+    <input class="texto" type="text" id="nome_cientifico" name="nome_cientifico" required>  <br>
+    <br>
     <!-- Descrição da planta -->
-    <label for="descricao">Descrição:</label>
-    <textarea id="descricao" name="descricao" required></textarea>
-
+    <label for="descricao">Descrição:</label> <br>
+    <textarea id="descricao" name="descricao" required></textarea>  <br>
+    <br>
     <!-- Características da planta -->
-    <label for="caracteristicas">Características:</label>
-    <textarea id="caracteristicas" name="caracteristicas" required></textarea>
-
+    <label for="caracteristicas">Características:</label> <br>
+    <textarea id="caracteristicas" name="caracteristicas" required></textarea>  <br>
+    <br>
     <!-- Uso medicinal, ornamental etc. -->
-    <label for="uso">Uso:</label>
-    <textarea id="uso" name="uso"></textarea>
-
+    <label for="uso">Uso:</label> <br>
+    <textarea id="uso" name="uso"></textarea>  <br>
+    <br>
     <!-- Upload de imagem da planta -->
-    <label for="imagem">Imagem (JPG/PNG):</label>
-    <input type="file" id="imagem" name="imagem" accept="image/*" required>
-
+    <label for="imagem">Escolher imagem</label>
+    <input type="file" id="imagem" class="botao_cadastro" name="imagem" accept="image/*" hidden>
+    <span id="file-name">Nenhum arquivo selecionado</span> <br>
+    <br>
     <!-- Botão de envio -->
-    <input type="submit" value="Cadastrar Planta">
+    <input class="botao_cadastro" type="submit" value="Cadastrar Planta"> <br>
   </form>
 
   <!-- Div onde vamos exibir mensagens de sucesso/erro -->
   <div id="mensagem"></div>
 
   <!-- SCRIPT JAVASCRIPT -->
+   <script>
+  const input = document.getElementById("imagem");
+  const fileName = document.getElementById("file-name");
+
+  input.addEventListener("change", () => {
+    fileName.textContent = input.files.length > 0 
+      ? input.files[0].name 
+      : "Nenhum arquivo selecionado";
+  });
+</script>
   <script>
     // Adiciona um evento ao formulário que será executado no momento do envio
     document.getElementById("formPlanta").addEventListener("submit", function (e) {
@@ -86,6 +112,6 @@
       });
     });
   </script>
-
+  <script src="scripts/script.js"></script>
 </body>
 </html>
