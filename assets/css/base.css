@@ -1,8 +1,17 @@
+
 body,html {
   height:100%;
   background:linear-gradient(135deg,#c9fa99,#9bc96c,#739e47) ;
   /* Adiciona um espaçamento no topo para não esconder o conteúdo atrás da navbar */
   padding-top: 70px;
+}
+
+body {
+  height: 900px;
+  background:linear-gradient(135deg,#c9fa99,#9bc96c,#739e47) ;
+  /* Adiciona um espaçamento no topo para não esconder o conteúdo atrás da navbar */
+  padding-top: 70px;
+  font-family: sans-serif;
 }
 
 h1 {
@@ -20,6 +29,28 @@ h1 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+.herbario-header {
+  background-color: #41A546;
+}
+
+.section-style-1 {
+  background-color: #2FCF37;
+}
+
+.section-style-3 {
+  background-color: #457A47;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
 }
 
 /* Barra de navegação */
@@ -238,7 +269,6 @@ footer {
   transform: scale(1);
   transition: transform 0.5s;
   position: relative;
-  
   font-size: 100px;
 }
 
@@ -278,6 +308,47 @@ img {
   transition: color 2s ease;
 }
 
+/*Cadastro*/
+#formPlanta{
+  padding: 10px;
+  margin: 20px auto;
+  width: 400px;
+  font-size: 1.6em;
+  background: linear-gradient(
+    45deg,
+    #2e7d32 0%,
+    #1b5e20 100%
+  );
+  background-color: #3b4e28;
+  color: white;
+  font-family: fantasy;
+  border: 2px solid #284d00;
+  border-radius: 10px;
+}
+.botao_cadastro{
+  margin-left: 100px;
+  font-family: fantasy;
+  width: 150px;
+  background-color: #284d00;
+  border: 2px solid #4caf50;
+  border-radius: 20px;
+  color: white;
+}
+textarea{
+  min-width: 380px;
+  min-height: 25px;
+  max-width: 380px;
+  max-height: 200px;
+  border: 2px solid #83af5a;
+}
+.texto {
+  width: 380px;
+  height: 25px;
+  border: 2px solid #83af5a;
+}
+#file-name{
+  font-size: 0.9;
+}
 
 /* Don't need button navigation */
 @supports (scroll-snap-type) {
@@ -285,5 +356,9 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
   }
 }
+========
+}
+
