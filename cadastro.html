@@ -17,6 +17,9 @@
   <!--Barra de Navegação centralizada com links direcionais-->
     <nav class="navbar centro">
       <div class="nav-item">
+        <a class="navlink" href="base.html"><img class="site_logo" src="assets/img/plant_icon.png" alt="logo"></a>
+      </div>
+      <div class="nav-item">
         <a class="navlink" href="cadastro.html">Cadastro</a>
         <div class="underline"></div>
       </div>
@@ -58,20 +61,24 @@
     <label for="uso">Uso:</label> <br>
     <textarea id="uso" name="uso"></textarea>  <br>
     <br>
+    <div class="botoes">
     <!-- Upload de imagem da planta -->
-    <label for="imagem">Escolher imagem</label>
-    <input type="file" id="imagem" class="botao_cadastro" name="imagem" accept="image/*" hidden>
-    <span id="file-name">Nenhum arquivo selecionado</span> <br>
+    <label for="imagem" class="botao_cadastro">Escolher imagem</label>
+    <input type="file" id="imagem" name="imagem" accept="image/*" hidden> 
+    <br>
     <br>
     <!-- Botão de envio -->
     <input class="botao_cadastro" type="submit" value="Cadastrar Planta"> <br>
+    </div>
+    
   </form>
 
   <!-- Div onde vamos exibir mensagens de sucesso/erro -->
   <div id="mensagem"></div>
 
   <!-- SCRIPT JAVASCRIPT -->
-   <script>
+  
+  <script>
   const input = document.getElementById("imagem");
   const fileName = document.getElementById("file-name");
 
