@@ -1,128 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Herbário Digital</title>
-    <!--Faz com que as configuações de estilo sejam "puxadas" do arquivo "styles.css"-->
-    <link rel="stylesheet" href="assets/css/base.css" />
-    <!--Link que adiciona um ícone à guia da página-->
-    <link
-      rel="shortcut icon"
-      type="imagex/png"
-      href="assets/img/plant_icon.png"
-    />
-  </head>
-  <body>
-    <!--Barra de Navegação centralizada com links direcionais-->
-    <nav class="navbar centro">
-      <div class="nav-item">
-        <a class="navlink" href="base.html"><img class="site_logo" src="assets/img/plant_icon.png" alt="logo"></a>
-      </div>
-      <div class="nav-item">
-        <a class="navlink" href="cadastro.html">Cadastro</a>
-        <div class="underline"></div>
-      </div>
-      <div class="nav-item">
-        <a class="navlink" href="">Pesquise pelo nome</a>
-        <div class="underline"></div>
-      </div>
-      <div class="nav-item">
-        <a class="navlink" href="">Pesquise pelo uso</a>
-        <div class="underline"></div>
-      </div>
-      <div class="nav-item">
-        <a class="navlink" href="">Ver Todas as Plantas</a>
-        <div class="underline"></div>
-      </div>
-    </nav>
-    <!-- Conteúdo principal do site -->
-    <main>
-      <div>
-        <h1 id="titulo">Herbário Digital</h1>
-        <!--Título principal do site-->
-      </div>
-      <div class="search">
-        <!--Barra de pesquisa-->
-        <input type="search" placeholder="Pesquisar plantas..." />
-      </div>
-      <div class="carousel">
-        <div class="slides">
-          <div id="slide-1">
-            <img class="plant-image" id="planta-menu-1" src="assets/img/alecrim.jpg" alt="">
-            <div class="plant-info">
-              <h3 class="plant-name">Alecrim</h3>
-              <p class="plant-scientific">Salvia rosmarinus</p>
-              <p class="plant-description">
-                Arbusto aromático muito usado na culinária e fitoterapia.
-              </p>
-              <p class="plant-uses">
-                Melhora a concentração, usado em óleos essenciais e chás.
-              </p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Herbário Digital</title>
+  <!--Faz com que as configuações de estilo sejam "puxadas" do arquivo "styles.css"-->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <!--Link que adiciona um ícone à guia da página-->
+  <link rel="shortcut icon" type="imagex/png" href="assets/img/plant_icon.png" />
+</head>
+
+<body class="main">
+  <!--Barra de Navegação centralizada com links direcionais-->
+  <nav class="navbar centro">
+    <div class="nav-item">
+      <a class="navlink" href="base.html"><img class="site_logo" src="assets/img/plant_icon.png" alt="logo"></a>
+      <div class="underline"></div>
+    </div>
+    <div class="nav-item">
+      <a class="navlink" href="cadastro.html">Cadastro</a>
+      <div class="underline"></div>
+    </div>
+    <div class="nav-item">
+      <a class="navlink" href="">Pesquise pelo nome</a>
+      <div class="underline"></div>
+    </div>
+    <div class="nav-item">
+      <a class="navlink" href="">Pesquise pelo uso</a>
+      <div class="underline"></div>
+    </div>
+    <div class="nav-item">
+      <a class="navlink" href="catalogo.html">Catálogo</a>
+      <div class="underline"></div>
+    </div>
+  </nav>
+  <!-- Conteúdo principal do site -->
+  <main>
+    <div>
+      <h1 id="titulo">Herbário Digital</h1>
+      <!--Título principal do site-->
+    </div>
+    <div class="search">
+      <!--Barra de pesquisa-->
+      <input type="search" placeholder="Pesquisar plantas..." />
+    </div>
+    <div class="carousel">
+      <div class="slides">
+        <div id="slide-1">
+          <img class="plant-image" id="planta-menu-1" src="assets/img/alecrim.jpg" alt="">
+          <div class="plant-info">
+            <h3 class="plant-name">Alecrim</h3>
+            <p class="plant-scientific">Salvia rosmarinus</p>
+            <p class="plant-description">
+              Arbusto aromático muito usado na culinária e fitoterapia.
+            </p>
+            <p class="plant-uses">
+              Melhora a concentração, usado em óleos essenciais e chás.
+            </p>
           </div>
+        </div>
+        <div id="slide-2">
+          <img class="plant-image" id="planta-menu-2" src="assets/img/camomila.jpg" alt="">
+          <div class="plant-info">
+            <h3 class="plant-name">Camomila</h3>
+            <p class="plant-scientific">Matricaria chamomilla</p>
+            <p class="plant-description">
+              Planta com flores pequenas, usada para chás calmantes.
+            </p>
+            <p class="plant-uses">
+              Tratamento de insônia, ansiedade, cólicas e irritações leves.
+            </p>
           </div>
-          <div id="slide-2">
-            <img class="plant-image" id="planta-menu-2" src="assets/img/camomila.jpg" alt="">
-            <div class="plant-info">
-              <h3 class="plant-name">Camomila</h3>
-              <p class="plant-scientific">Matricaria chamomilla</p>
-              <p class="plant-description">
-                Planta com flores pequenas, usada para chás calmantes.
-              </p>
-              <p class="plant-uses">
-                Tratamento de insônia, ansiedade, cólicas e irritações leves.
-              </p>
-            </div>
+        </div>
+        <div id="slide-3">
+          <img class="plant-image" id="planta-menu-2" src="assets/img/hortela.jpg" alt="">
+          <div class="plant-info">
+            <h3 class="plant-name">Hortelã</h3>
+            <p class="plant-scientific">Mentha piperita</p>
+            <p class="plant-description">
+              Erva aromática comum em chás e remédios naturais.
+            </p>
+            <p class="plant-uses">
+              Estimulante digestivo, alivia náuseas e tem efeito refrescante.
+            </p>
           </div>
-          <div id="slide-3">
-            <img class="plant-image" id="planta-menu-2" src="assets/img/hortela.jpg" alt="">
-            <div class="plant-info">
-              <h3 class="plant-name">Hortelã</h3>
-              <p class="plant-scientific">Mentha piperita</p>
-              <p class="plant-description">
-                Erva aromática comum em chás e remédios naturais.
-              </p>
-              <p class="plant-uses">
-                Estimulante digestivo, alivia náuseas e tem efeito refrescante.
-              </p>
-            </div>
+        </div>
+        <div id="slide-4">
+          <img class="plant-image" id="planta-menu-2" src="assets/img/erva_cidreira.jpeg" alt="">
+          <div class="plant-info">
+            <h3 class="plant-name">Erva-cidreira</h3>
+            <p class="plant-scientific">Melissa officinalis</p>
+            <p class="plant-description">
+              Planta de folhas aromáticas usada para relaxamento.
+            </p>
+            <p class="plant-uses">
+              Combate insônia, ansiedade, tensão e cólicas.
+            </p>
           </div>
-          <div id="slide-4">
-            <img class="plant-image" id="planta-menu-2" src="assets/img/erva_cidreira.jpeg" alt="">
-            <div class="plant-info">
-              <h3 class="plant-name">Erva-cidreira</h3>
-              <p class="plant-scientific">Melissa officinalis</p>
-              <p class="plant-description">
-                Planta de folhas aromáticas usada para relaxamento.
-              </p>
-              <p class="plant-uses">
-                Combate insônia, ansiedade, tensão e cólicas.
-              </p>
-            </div>
+        </div>
+        <div id="slide-5">
+          <img class="plant-image" id="planta-menu-2" src="assets/img/boldo.jpg" alt="">
+          <div class="plant-info">
+            <h3 class="plant-name">Boldo</h3>
+            <p class="plant-scientific">Peumus boldus</p>
+            <p class="plant-description">
+              Usado tradicionalmente para problemas digestivos e hepáticos.
+            </p>
+            <p class="plant-uses">
+              Utilizado em infusões para má digestao e problemas do fígado.
+            </p>
           </div>
-          <div id="slide-5">
-            <img class="plant-image" id="planta-menu-2" src="assets/img/boldo.jpg" alt="">
-            <div class="plant-info">
-              <h3 class="plant-name">Boldo</h3>
-              <p class="plant-scientific">Peumus boldus</p>
-              <p class="plant-description">
-                Usado tradicionalmente para problemas digestivos e hepáticos.
-              </p>
-              <p class="plant-uses">
-                Utilizado em infusões para má digestao e problemas do fígado.
-              </p>
-            </div>
-          </div>
+        </div>
       </div>
-        <a href="#slide-1"></a>
-        <a href="#slide-2"></a>
-        <a href="#slide-3"></a>
-        <a href="#slide-4"></a>
-        <a href="#slide-5"></a>
-    </main>
-      </body>
-    <!-- Rodapé do site -->
-    <footer><p>&copy; 2024 Herbário Digital. Preservando o conhecimento botânico para as futuras gerações.</p></footer>
-    <script src="scripts/script.js"></script>
+      <a href="#slide-1"></a>
+      <a href="#slide-2"></a>
+      <a href="#slide-3"></a>
+      <a href="#slide-4"></a>
+      <a href="#slide-5"></a>
+  </main>
+  <!-- Rodapé do site -->
+  <footer>
+    <p>&copy; 2024 Herbário Digital. Preservando o conhecimento botânico para as futuras gerações.</p>
+  </footer>
+  <script src="scripts/script.js"></script>
+</body>
+
 
 </html>
