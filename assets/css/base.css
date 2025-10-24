@@ -64,6 +64,7 @@ a {
   padding: 8px 0; /* Adiciona um pouco de preenchimento vertical */
   z-index: 1000; /* Garante que a navbar fique na frente de outros elementos */
 }
+
 a {
   text-decoration: none;
   color: #ffffff;
@@ -84,45 +85,6 @@ a {
   height: 2px;
   background-color: #e9e9e9; /* Mesma cor do texto do link */
   width: 0; /* Começa com largura zero */
-}
-
-/* Barra de pesquisa */
-.search {
-  max-width: 500px; /* Largura máxima de 500 pixels */
-  margin: 20px auto; /* Centraliza a barra de pesquisa */
-  position: relative;
-  border: 2px solid rgba(189, 189, 189, 0.692); /* Borda verde semi-transparente */
-  border-radius: 50px;
-}
-
-/* Campo de input da barra de pesquisa */
-.search input {
-  width: 100%; /* Ocupa toda a largura do container */
-  padding: 1rem 1.5rem; /* Adiciona um espaço interno na barra de pesquisa */
-  border: 2px solid rgba(76, 175, 80, 0.2); /* Borda verde semi-transparente */
-  border-radius: 50px; /* Deixa a borda arredondada */
-  font-size: 1rem; /* Deixa a fonte com 1rem(16 pixels) */
-  background: rgba(255, 255, 255, 80, 0.1); /* Fundo branco semi-transparente */
-  transition: all 0.3s ease; /* Transição suave de entrada e saída */
-}
-
-/* Quando a barra de pesquisa está selecionada para digitação */
-.search input:focus {
-  outline: none; /* Remove o outline padrão */
-  border-color: #4caf50; /* Muda a borda para verde */
-  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1); /* Faz uma borda(anel de foco) personalizada */
-}
-
-/* Grid onde estarão as plantas */
-.plant-grid {
-  display: grid; /*Ativa o CSS grid*/
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(350px, 1fr)
-  ); /*Permite a responsividade do grid*/
-  gap: 2rem; /*Adiciona um espaçamento entre os card*/
-  margin: 3rem; /*Adiciona uma margem no topo dos cards*/
-  margin-bottom: 200px;
 }
 
 /* Cartão da planta */
@@ -229,6 +191,7 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
 .carousel {
   width: 700px;
   height: auto;
@@ -318,55 +281,7 @@ img {
   transition: color 2s ease;
 }
 
-/*Cadastro*/
-#formPlanta{
-  padding: 10px;
-  margin: 20px auto;
-  width: 400px;
-  font-size: 1.6em;
-  background: linear-gradient(
-    45deg,
-    #2e7d32 0%,
-    #1b5e20 100%
-  );
-  background-color: #3b4e28;
-  color: white;
-  font-family: fantasy;
-  border: 2px solid #284d00;
-  border-radius: 10px;
-}
-.botoes{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.botao_cadastro{
-  margin: 20px;
-  align-items: center;
-  font-size: large;
-  font-family: fantasy;
-  width: fit-content;
-  padding: 5px;
-  background-color: #284d00;
-  border: 2px solid #4caf50;
-  border-radius: 20px;
-  color: white;
-}
-textarea{
-  min-width: 380px;
-  min-height: 25px;
-  max-width: 380px;
-  max-height: 200px;
-  border: 2px solid #83af5a;
-}
-.texto {
-  width: 380px;
-  height: 25px;
-  border: 2px solid #83af5a;
-}
-#file-name{
-  font-size: medium
-}
+
 .site_logo{
   width: 40px;
   height: 40px;

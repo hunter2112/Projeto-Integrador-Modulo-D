@@ -1,0 +1,11 @@
+/* Grid onde estarão as plantas */
+.plant-grid {
+  display: grid; /*Ativa o CSS grid*/
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(350px, 1fr)
+  ); /*Permite a responsividade do grid*/
+  gap: 2rem; /*Adiciona um espaçamento entre os card*/
+  margin: 3rem; /*Adiciona uma margem no topo dos cards*/
+  margin-bottom: 200px;
+}

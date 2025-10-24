@@ -1,0 +1,26 @@
+/* Barra de pesquisa */
+.search {
+  max-width: 500px; /* Largura máxima de 500 pixels */
+  margin: 20px auto; /* Centraliza a barra de pesquisa */
+  position: relative;
+  border: 2px solid rgba(189, 189, 189, 0.692); /* Borda verde semi-transparente */
+  border-radius: 50px;
+}
+
+/* Campo de input da barra de pesquisa */
+.search input {
+  width: 100%; /* Ocupa toda a largura do container */
+  padding: 1rem 1.5rem; /* Adiciona um espaço interno na barra de pesquisa */
+  border: 2px solid rgba(76, 175, 80, 0.2); /* Borda verde semi-transparente */
+  border-radius: 50px; /* Deixa a borda arredondada */
+  font-size: 1rem; /* Deixa a fonte com 1rem(16 pixels) */
+  background: rgba(255, 255, 255, 80, 0.1); /* Fundo branco semi-transparente */
+  transition: all 0.3s ease; /* Transição suave de entrada e saída */
+}
+
+/* Quando a barra de pesquisa está selecionada para digitação */
+.search input:focus {
+  outline: none; /* Remove o outline padrão */
+  border-color: #4caf50; /* Muda a borda para verde */
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1); /* Faz uma borda(anel de foco) personalizada */
+}

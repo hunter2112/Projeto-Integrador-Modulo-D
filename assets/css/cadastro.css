@@ -1,0 +1,49 @@
+/*Cadastro*/
+#formPlanta{
+  padding: 10px;
+  margin: 20px auto;
+  width: 400px;
+  font-size: 1.6em;
+  background: linear-gradient(
+    45deg,
+    #2e7d32 0%,
+    #1b5e20 100%
+  );
+  background-color: #3b4e28;
+  color: white;
+  font-family: fantasy;
+  border: 2px solid #284d00;
+  border-radius: 10px;
+}
+.botoes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.botao_cadastro{
+  margin: 20px;
+  align-items: center;
+  font-size: large;
+  font-family: fantasy;
+  width: fit-content;
+  padding: 5px;
+  background-color: #284d00;
+  border: 2px solid #4caf50;
+  border-radius: 20px;
+  color: white;
+}
+textarea{
+  min-width: 380px;
+  min-height: 25px;
+  max-width: 380px;
+  max-height: 200px;
+  border: 2px solid #83af5a;
+}
+.texto {
+  width: 380px;
+  height: 25px;
+  border: 2px solid #83af5a;
+}
+#file-name{
+  font-size: medium
+}

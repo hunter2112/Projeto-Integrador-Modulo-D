@@ -1,4 +1,5 @@
 <?php
+
     require_once('./app/router.php');
     require_once('./app/database.php');
     $router     = new App\Router();
