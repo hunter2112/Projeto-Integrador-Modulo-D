@@ -53,6 +53,7 @@ a {
   top: 0; /* Alinha no topo */
   left: 0; /* Garante que ocupe toda a largura */
   width: 100%;
+  height: 50px;
   background: linear-gradient(
     135deg,
     #2e7d32 0%,
@@ -129,7 +130,7 @@ a {
   background-color: white;
   height: auto;
   margin-left: 10px;
-  border-radius: 16px;
+
 }
 
 /* Nome da planta */
@@ -198,7 +199,7 @@ footer {
   text-align: center;
   overflow: hidden;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .slides {
@@ -216,6 +217,7 @@ footer {
 .slides::-webkit-scrollbar {
   width: 10px;
   height: 10px;
+  margin: 5px
 }
 .slides::-webkit-scrollbar-thumb {
   margin-top: 10px;
@@ -234,16 +236,19 @@ footer {
   scroll-snap-align: start;
   flex-shrink: 0;
   width: 700px;
-  height: 410px;
+  height: 370px;
   margin-right: 50px;
-  border-radius: 10px;
   background-color: #ffffff;
   transform-origin: center center;
-  transform: scale(1);
-  transition: transform 0.5s;
+  transition: all ease 0.5s ;
   position: relative;
   font-size: 100px;
-  border-radius: 16px;
+
+}
+
+.slides > div:hover{
+  transform: scale(0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 img {
@@ -267,6 +272,7 @@ img {
   border-radius: 30%;
   margin-top: 5px;
   position: relative;
+  transition: all 0.1s ease;
 }
 .carousel > a:active {
   top: 1px;
@@ -274,22 +280,28 @@ img {
 .carousel > a:hover{
   background-color: #1b5e20;
   transform: scaleX(1.1);
-  transition: transform 50ms ease;
 }
 .carousel > a:focus {
   background-color: rgb(2, 48, 13);
-  transition: color 2s ease;
+  
 }
 
 
 .site_logo{
   width: 40px;
   height: 40px;
+  margin-top: 3px;
   margin-left: 50px;
   position: fixed;
   top: 0;
   left: 0;
+  transition: all 0.5s ease;
 }
+
+.site_logo:hover{
+  transform: scale(1.1);
+}
+
 
 /* Don't need button navigation */
 @supports (scroll-snap-type) {
