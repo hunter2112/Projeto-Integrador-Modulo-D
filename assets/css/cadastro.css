@@ -1,7 +1,7 @@
 /*Cadastro*/
 #formPlanta{
   padding: 10px;
-  margin: 20px auto;
+  margin: 50px auto;
   width: 400px;
   font-size: 1.6em;
   background: linear-gradient(
@@ -31,6 +31,11 @@
   border: 2px solid #4caf50;
   border-radius: 20px;
   color: white;
+  transition: all ease 0.3s;
+}
+.botao_cadastro:hover{
+  transform: translateY(-6px); /* Move 8px para cima */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
 }
 textarea{
   min-width: 380px;

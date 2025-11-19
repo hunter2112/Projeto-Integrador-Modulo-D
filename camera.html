@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso à Câmera</title>
+</head>
+<body>
+    <h2>📸 Captura de imagem - Herbário Digital</h2>
+  <video id="video" autoplay></video>
+  <br>
+  <button id="capturar">Tirar Foto</button>
+  <canvas id="canvas" style="display:none;"></canvas>
+
+  <script>
+    const video = document.getElementById("video");
+    const canvas = document.getElementById("canvas");
+    const capturar = document.getElementById("capturar");
+
+    // Solicita acesso à câmera
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        video.srcObject = stream;
+      })
+      .catch(err => {
+        alert("❌ Erro ao acessar a câmera: " + err.message);
+      });
+
+    // Captura uma imagem do vídeo
+    capturar.addEventListener("click", () => {
+      const context = canvas.getContext("2d");
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+      // Converte para imagem base64
+      const imagem = canvas.toDataURL("image/png");
+      console.log("Imagem capturada:", imagem);
+
+      alert("📷 Imagem capturada com sucesso!");
+    });
+  </script>
+</body>
+</html>
