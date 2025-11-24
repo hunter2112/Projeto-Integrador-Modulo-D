@@ -3,11 +3,13 @@
 namespace App;
 
 use mysqli;
+use Exception;
+
 class Database {
-    private $conn;
+    private mysqli $conn;
     private $stmt;
 
-    public function __construct($envFile = ".env") {
+    public function __construct(string $envFile = ".env") {
         $config = $this->loadEnv($envFile);
 
         $host    = $config['DB_HOST'] ?? 'localhost';
@@ -19,63 +21,71 @@ class Database {
         $this->conn = new mysqli($host, $user, $pass, $dbname);
 
         if ($this->conn->connect_error) {
-            die("Connection failed: " . $this->conn->connect_error);
+            throw new Exception("DB Connection failed: " . $this->conn->connect_error);
         }
 
         $this->conn->set_charset($charset);
     }
 
-    private function loadEnv($file) {
-        $config = [];
+    private function loadEnv(string $file): array {
         if (!file_exists($file)) {
-            die("Missing .env file: $file");
+            throw new Exception("Missing .env file: $file");
         }
 
+        $config = [];
         $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
         foreach ($lines as $line) {
             if (strpos(trim($line), '#') === 0) continue;
-            list($key, $value) = explode("=", $line, 2);
+            if (!str_contains($line, '=')) continue;
+
+            [$key, $value] = explode("=", $line, 2);
             $config[trim($key)] = trim($value);
         }
+
         return $config;
     }
 
-    // Simple query (no params)
-    public function query($sql) {
+    // Simple SELECT without parameters
+    public function query(string $sql) {
         $result = $this->conn->query($sql);
         if ($this->conn->error) {
-            die("Query error: " . $this->conn->error);
+            throw new Exception("Query Error: " . $this->conn->error);
         }
         return $result;
     }
 
-    // Prepared query with params
-    public function prepare($sql, $types, $params) {
+    // Prepared SELECT with parameters
+    public function prepare(string $sql, string $types, array $params) {
         $this->stmt = $this->conn->prepare($sql);
         if (!$this->stmt) {
-            die("Prepare failed: " . $this->conn->error);
+            throw new Exception("Prepare failed: " . $this->conn->error);
         }
+
         $this->stmt->bind_param($types, ...$params);
         $this->stmt->execute();
+
         return $this->stmt->get_result();
     }
 
-    // Insert/update/delete
-    public function execute($sql, $types, $params) {
+    // INSERT / UPDATE / DELETE with parameters
+    public function execute(string $sql, string $types, array $params): int {
         $this->stmt = $this->conn->prepare($sql);
         if (!$this->stmt) {
-            die("Prepare failed: " . $this->conn->error);
+            throw new Exception("Prepare failed: " . $this->conn->error);
         }
+
         $this->stmt->bind_param($types, ...$params);
         $this->stmt->execute();
+
         return $this->stmt->affected_rows;
     }
 
-    public function lastInsertId() {
+    public function lastInsertId(): int {
         return $this->conn->insert_id;
     }
 
-    public function close() {
+    public function close(): void {
         $this->conn->close();
     }
 }
