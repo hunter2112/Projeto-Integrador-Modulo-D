@@ -1,19 +1,19 @@
-<header class="sticky-top">
-    <nav class="navbar navbar-expand-lg herbario-header">
-        <div class="container-xxl">
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <a href="/cadastro" class="text-white nav-link" aria-current="page">Cadastro</a>
-                </li>
-                    
-                <li class="nav-item">
-                    <a href="/pesquisa" class="text-white nav-link" aria-current="page">Pesquisa</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="/catalogo" class="text-white nav-link" aria-current="page">Catálogo</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
+<!--Barra de Navegação centralizada com links direcionais-->
+  <nav class="navbar centro">
+    <div class="nav-item">
+      <a class="navlink" href="base.html"><img class="site_logo" src="assets/img/plant_icon.png" alt="logo"></a>
+      <div class="underline"></div>
+    </div>
+    <div class="nav-item">
+      <a class="navlink" href="/">Cadastro</a>
+      <div class="underline"></div>
+    </div>
+    <div class="nav-item">
+      <a class="navlink" href="/pesquisa:nome">Pesquise pelo nome</a>
+      <div class="underline"></div>
+    </div>
+    <div class="nav-item">
+      <a class="navlink" href="/pesquisa:uso">Pesquise pelo uso</a>
+      <div class="underline"></div>
+    </div>
+  </nav>

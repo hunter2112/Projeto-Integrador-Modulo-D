@@ -8,7 +8,7 @@ USE plantas_db;
 
 -- Criar a tabela plantas
 CREATE TABLE plantas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    usos TEXT
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  usos TEXT
 );
