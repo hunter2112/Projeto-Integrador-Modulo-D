@@ -25,10 +25,9 @@
             require_once('./app/router.php');
             require_once('./app/database.php');
             $router     = new App\Router();
-            $db         = new App\Database();
 
             $router->get('/', function() {
-                echo "<h3>Catalogo</h3>";
+                require_once('./app/content/catalogo.php');
             });
 
             $router->get('/pesquisa:uso', function() {
@@ -42,8 +41,6 @@
             echo $router->resolve();
         ?>
     </main>
-
-    <?php require_once('./app/template/footer.php'); ?>
 </body>
 
 </html>
