@@ -31,52 +31,49 @@
             
   </main>
         <?php
-            // Importa o sistema de rotas e banco de dados
-            require_once('./app/router.php');
-            require_once('./app/database.php');
 
-            // Cria uma instância do roteador
-            $router = new App\Router();
+require_once './app/router.php';
+require_once './app/database.php';
 
-            /*
-             |-----------------------------------------------------
-             | Declaração das rotas GET do site
-             |-----------------------------------------------------
-            */
+use App\Router;
 
-            // Rota principal (home) -> exibe o catálogo de plantas
-            $router->get('/', function() {
-                // Inclui o arquivo do catálogo
-                require_once('./app/content/catalogo.php');
-            });
+$router = new Router();
 
-            // Rota para pesquisa
-            $router->get('/pesquisa', function() {
-                require_once('./app/content/pesquisa.php');
-            });
+/*
+|--------------------------------------------------------------------------
+| ROTAS DO SITE
+|--------------------------------------------------------------------------
+*/
 
-            $router->get('/pesquisar', function() {
-                require_once('./app/content/pesquisar.php');
-            });
+// Página inicial → catálogo
+$router->get('/', function () {
+    require './app/content/catalogo.php';
+});
 
-             $router->get('/cadastro', function() {
-                require_once('./app/content/cadastro.php');
-            });
+// Página de pesquisa
+$router->get('/pesquisar', function () {
+    require './app/content/pesquisa.php';
+});
 
+// Página de cadastro
+$router->get('/cadastro', function () {
+    require './app/content/cadastro.php';
+});
 
-            $router->get('/pesquisar', [App\Controllers\PesquisaController::class, 'buscar']);
-
-            $router->post('/cadastrar_planta', [App\CadastroController::class, 'salvar']);
+// Rota para cadastrar planta (POST)
+$router->post('/cadastrar_planta', [App\Controllers\PlantaController::class, 'store']);
 
 
-            /*
-             |-----------------------------------------------------
-             | resolve()
-             | Identifica a rota acessada e executa o callback
-             |-----------------------------------------------------
-            */
-            echo $router->resolve();
-        ?>
+/*
+|--------------------------------------------------------------------------
+| Executar o Router
+|--------------------------------------------------------------------------
+*/
+
+echo $router->resolve();
+
+?>
+
     </main>
 </body>
 
