@@ -5,11 +5,11 @@
       <div class="underline"></div>
     </div>
     <div class="nav-item">
-      <a class="navlink" href="/pesquisa:nome">Pesquise pelo nome</a>
+      <a class="navlink" href="/pesquisa">Pesquisa</a>
       <div class="underline"></div>
     </div>
     <div class="nav-item">
-      <a class="navlink" href="/pesquisa:uso">Pesquise pelo uso</a>
+      <a class="navlink" href="/cadastro">Cadastro</a>
       <div class="underline"></div>
     </div>
   </nav>

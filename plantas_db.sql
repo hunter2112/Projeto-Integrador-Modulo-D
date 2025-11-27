@@ -28,3 +28,4 @@ INSERT INTO plantas (nome, nome_cientifico, descricao, caracteristicas, uso) VAL
 ('Guaco','Mikania glomerata','Planta trepadeira com folhas aromáticas.','Expectorante, broncodilatadora.','Utilizado no alívio da tosse e doenças respiratórias.'),
 ('Gengibre','Zingiber officinale','Rizoma muito usado como tempero e remédio natural.','Antioxidante, anti-inflamatório, digestivo.','Combate náuseas, resfriados e problemas gastrointestinais.'),
 ('Urtiga','Urtica dioica','Planta com folhas urticantes, rica em nutrientes.','Diurética, anti-inflamatória.','Usada no tratamento de artrite, anemia e problemas urinários.');
+

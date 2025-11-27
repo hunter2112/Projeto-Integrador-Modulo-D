@@ -1,54 +1,141 @@
-/*Cadastro*/
-#formPlanta{
-  padding: 10px;
-  margin: 50px auto;
-  width: 400px;
-  font-size: 1.6em;
-  background: linear-gradient(
-    45deg,
-    #2e7d32 0%,
-    #1b5e20 100%
-  );
-  background-color: #3b4e28;
-  color: white;
-  font-family: fantasy;
-  border: 2px solid #284d00;
-  border-radius: 10px;
+/* ===============================
+   FORMULÁRIO DE CADASTRO – PADRONIZADO
+   =============================== */
+
+/* Caixa principal do formulário */
+#formPlanta {
+  background: linear-gradient(45deg, #2e7d32 0%, #1b5e20 100%);
+  padding: 25px;
+  margin: 40px auto;
+  width: 450px;
+
+  color: #ffffff;
+  font-family: "Segoe UI", Verdana, sans-serif;
+
+  border: 2px solid #1b5e20;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
-.botoes{
+
+/* Textos padrão */
+label {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Inputs e textareas */
+.texto,
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+
+  border: 2px solid #83af5a;
+  border-radius: 8px;
+  background: #f3f6e9;
+  color: #1b1b1b;
+
+  font-family: "Segoe UI", Verdana, sans-serif;
+
+  transition: 0.2s ease;
+}
+
+.texto:focus,
+textarea:focus {
+  border-color: #3a7f2e;
+  outline: none;
+  box-shadow: 0 0 6px rgba(58, 127, 46, 0.4);
+}
+
+/* Textarea limites */
+textarea {
+  min-height: 80px;
+  max-height: 250px;
+  resize: vertical;
+}
+
+/* Botões */
+.botao_cadastro {
+  background: #3a7f2e;
+  color: white;
+
+  padding: 12px 25px;
+  margin-top: 10px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Segoe UI", Verdana, sans-serif;
+
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+.botao_cadastro:hover {
+  background: #2e7d32;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+/* Botões alinhados */
+.botoes {
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 20px;
 }
-.botao_cadastro{
-  margin: 20px;
-  align-items: center;
-  font-size: large;
-  font-family: fantasy;
-  width: fit-content;
-  padding: 5px;
-  background-color: #284d00;
-  border: 2px solid #4caf50;
-  border-radius: 20px;
-  color: white;
-  transition: all ease 0.3s;
+
+/* Botão "Escolher imagem" */
+.upload-label {
+  background: #2e7d32;
+  color: #fff;
+
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: "Segoe UI", Verdana, sans-serif;
+
+  transition: 0.3s ease-in-out;
 }
-.botao_cadastro:hover{
-  transform: translateY(-6px); /* Move 8px para cima */
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
+
+.upload-label:hover {
+  background: #1b5e20;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
-textarea{
-  min-width: 380px;
-  min-height: 25px;
-  max-width: 380px;
-  max-height: 200px;
-  border: 2px solid #83af5a;
+
+/* Nome do arquivo */
+#file-name,
+.file-name {
+  margin-top: -10px;
+  font-size: 1rem;
+  color: #e0e0e0;
+  text-align: center;
 }
-.texto {
-  width: 380px;
-  height: 25px;
-  border: 2px solid #83af5a;
+
+/* Mensagens */
+.sucesso {
+  color: #d4ffd4;
+  padding: 10px;
+  background: #2e7d32;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
 }
-#file-name{
-  font-size: medium
+
+.erro {
+  color: #ffd4d4;
+  padding: 10px;
+  background: #8b1e1e;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
 }

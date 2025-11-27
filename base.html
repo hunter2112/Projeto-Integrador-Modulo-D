@@ -7,6 +7,7 @@
   <title>Herbário Digital</title>
   <!--Faz com que as configuações de estilo sejam "puxadas" do arquivo "styles.css"-->
   <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/pesquisa.css" />
   <!--Link que adiciona um ícone à guia da página-->
   <link rel="shortcut icon" type="imagex/png" href="assets/img/plant_icon.png" />
 </head>
@@ -38,9 +39,25 @@
   <!-- Conteúdo principal do site -->
   <main>
     <div>
-      <h1 id="titulo">Herbário Digital</h1>
-      <!--Título principal do site-->
+        <h1 id="titulo">Herbário Digital</h1>
+        <!--Título principal do site-->
+      </div>
+    <div class="pesquisa">
+      <div class="search">
+        <!--Barra de pesquisa-->
+        <input type="search"  placeholder="Pesquisar plantas..." />
+      </div>
+      <div class="selecao">
+        <select name="tipo" class="search-select">
+        <option value="nome">Nome da Planta</option>
+        <option value="uso">Uso da Planta</option>
+        </select>
+      </div>  
     </div>
+    
+    
+
+    
     <div class="carousel">
       <div class="slides">
         <div id="slide-1">

@@ -12,40 +12,52 @@ $result = $db->query("SELECT * FROM plantas");
 
     <h1 id="titulo">Catálogo</h1>
 
-    <section class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-			<?php while ($row = $result->fetch_assoc()): ?>
+    <section class="plant-grid" id="plantas">
 
-				<?php 
-					// Nome da planta
-					$nomePlanta = $row['nome'];
+        <?php while ($row = $result->fetch_assoc()): ?>
+            
+            <?php
+                // Nome comum
+                $nome = $row['nome'];
+                
+                // Nome científico
+                $nomeCientifico = $row['nome_cientifico'] ?? "";
 
-					// Gera hash MD5 a partir do nome
-					$hash = md5($nomePlanta);
+                // Descrição
+                $descricao = $row['descricao'] ?? "Sem descrição cadastrada.";
 
-					// Caminho da imagem
-					$imgPath = "assets/img/plantas/{$hash}.jpg";
+                // Gerar hash do nome para localizar a imagem (como seu sistema usa)
+                $hash = md5($nome);
+                $imgPath = "assets/img/plantas/{$hash}.jpg";
 
-					if (!file_exists($imgPath)) {
-						$imgPath = "assets/img/default_plant.jpg";
-					}
-				?>
-				<div class="col">
-					<div class="card h-100 text-center">
+                // Se imagem não existir → imagem padrão
+                if (!file_exists($imgPath)) {
+                    $imgPath = "assets/img/default_plant.jpg";
+                }
+            ?>
 
-						<img src="<?= $imgPath ?>" class="plant-image">
-						<div class="plant-name"><?= htmlspecialchars($nomePlanta); ?></div>
+            <!-- CARD DA PLANTA (com as mesmas classes e estrutura do HTML estático) -->
+            <div class="plant-card" data-name="<?= htmlspecialchars($nome) ?>">
 
-							<?php if (!empty($row['nome_cientifico'])): ?>
-							<p class="text-muted" style="font-size: 0.75rem;">
-								<?= htmlspecialchars($row['nome_cientifico']); ?>
-							</p>
-							<?php endif; ?>
-						</div>
+                <div class="plant-image" 
+                     style="background-image: url('<?= $imgPath ?>')">
+                </div>
 
-					</div>
-				</div>
+                <div class="plant-info">
+                    <h3 class="plant-name"><?= htmlspecialchars($nome) ?></h3>
 
-			<?php endwhile; ?>
+                    <?php if (!empty($nomeCientifico)): ?>
+                        <p class="plant-scientific"><?= htmlspecialchars($nomeCientifico) ?></p>
+                    <?php endif; ?>
 
-    </div>
-</section>
+                    <p class="plant-description"><?= nl2br(htmlspecialchars($descricao)) ?></p>
+                </div>
+
+            </div>
+
+        <?php endwhile; ?>
+
+    </section>
+
+	<?php require_once('./app/template/footer.php'); ?>
+</body>
