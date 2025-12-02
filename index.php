@@ -1,3 +1,7 @@
+<?php
+header('Content-Type: text/html; charset=utf-8');
+?>
+
 <!DOCTYPE html>
 <!-- Define o documento como HTML5 e o idioma como Português do Brasil -->
 <html lang="pt-br">

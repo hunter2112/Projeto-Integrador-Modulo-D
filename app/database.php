@@ -37,9 +37,10 @@ class Database {
         if ($this->conn->connect_error) {
             throw new Exception("DB Connection failed: " . $this->conn->connect_error);
         }
-
+    
         // Define charset (importante para acentos e caracteres especiais)
         $this->conn->set_charset($charset);
+        
     }
 
     /*

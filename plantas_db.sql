@@ -1,6 +1,10 @@
 -- Criar o banco de dados
 CREATE DATABASE IF NOT EXISTS plantas_db
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+  
+
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
 
 SET GLOBAL character_set_server=utf8mb4;
 SET GLOBAL collation_server=utf8mb4_unicode_ci;
