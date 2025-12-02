@@ -1,11 +1,112 @@
-/* Grid onde estarão as plantas */
-.plant-grid {
-  display: grid; /*Ativa o CSS grid*/
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(350px, 1fr)
-  ); /*Permite a responsividade do grid*/
-  gap: 2rem; /*Adiciona um espaçamento entre os card*/
-  margin: 3rem; /*Adiciona uma margem no topo dos cards*/
-  margin-bottom: 200px;
+/* ===== MODAL FINAL ===== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999; /* ficar acima de tudo */
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #ffffff;
+  width: 800px;
+  max-width: 90%;
+  padding: 25px;
+  border-radius: 16px;
+  display: flex;
+  gap: 25px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  animation: pop 0.25s ease-out;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* botão X */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #222;
+  z-index: 100000;
+}
+
+/* IMAGEM */
+.modal-left {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-left img {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin: 20px;
+}
+
+/* TEXTO */
+.modal-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+}
+
+.modal-right h2 {
+  font-size: 1.8rem;
+  color: #1b5e20;
+}
+
+.modal-right h3 {
+  font-size: 1.2rem;
+  color: #388e3c;
+  margin-bottom: 8px;
+}
+
+.modal-right p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #333;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 650px) {
+  .modal-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .modal-left img {
+    width: 90%;
+    height: auto;
+  }
+
+  .modal-right {
+    text-align: left;
+    width: 100%;
+  }
 }

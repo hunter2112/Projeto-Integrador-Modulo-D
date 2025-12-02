@@ -31,6 +31,8 @@ class Database {
         // Tenta conectar ao banco usando mysqli
         $this->conn = new mysqli($host, $user, $pass, $dbname);
 
+        $this->conn->set_charset("utf8mb4");
+
         // Se falhar, lança uma EXCEÇÃO (ao invés de dar "die")
         if ($this->conn->connect_error) {
             throw new Exception("DB Connection failed: " . $this->conn->connect_error);

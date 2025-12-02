@@ -1,12 +1,13 @@
+/* Estilos base para o corpo e o HTML */
 body,
 html {
   height: auto;
   background-color: #e9ebe9;
-  /* Adiciona um espaçamento no topo para não esconder o conteúdo atrás da navbar */
-  padding-top: 50px;
+  padding-top: 50px; /* Adiciona um espaçamento no topo para não esconder o conteúdo atrás da navbar */
   font-family: sans-serif;
 }
 
+/* Estilização para o título principal (h1) */
 h1 {
   text-align: center;
   font-size: 4rem;
@@ -18,6 +19,8 @@ h1 {
   align-self: center;
   align-content: center;
 }
+
+/* Reset universal para remover margens e paddings padrão dos elementos */
 * {
   margin: 0;
   padding: 0;
@@ -35,6 +38,7 @@ h1 {
   background-color: #457a47;
 }
 
+/* Define a família de fontes principal para o corpo do site */
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -45,7 +49,7 @@ a {
   text-decoration: none;
 }
 
-/* Barra de navegação */
+/* Estilização da barra de navegação fixa no topo */
 .navbar {
   position: fixed; /* Fixa o elemento na tela */
   top: 0; /* Alinha no topo */
@@ -53,18 +57,18 @@ a {
   width: 100%;
   height: 70px;
   background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
-  /*background-color: #4d9900;*/
   font-size: 30px;
-  padding: 8px 0; /* Adiciona um pouco de preenchimento vertical */
+  padding: 8px 0;
   z-index: 1000; /* Garante que a navbar fique na frente de outros elementos */
 }
 
+/* Estilo padrão para links, definindo a cor do texto como branco */
 a {
   text-decoration: none;
   color: #ffffff;
 }
 
-/* Links na navbar */
+/* Estilização dos itens de navegação (links) na navbar */
 .nav-item {
   position: relative; /* Permite posicionar o .underline em relação a este container */
   display: inline-block; /* Faz com que os itens fiquem lado a lado */
@@ -80,6 +84,8 @@ a {
   background-color: #e9e9e9; /* Mesma cor do texto do link */
   width: 0; /* Começa com largura zero */
 }
+
+/* Grid para exibir os cartões de plantas */
 .plant-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -87,10 +93,10 @@ a {
   padding: 30px;
   width: 100%;
   max-width: 2000px;
-  margin: 0 auto;
+  margin: 30px auto 100px auto;
 }
 
-/* Cartão da planta */
+/* Estilização individual do cartão da planta */
 .plant-card {
   background: rgba(255, 255, 255, 0.9); /*Fundo branco semi-transparente*/
   border-radius: 16px; /*Borda arredondada*/
@@ -102,11 +108,13 @@ a {
   max-width: 800px;
 }
 
-/* Quando o mouse está posicionado em cima do cartão da planta */
+/* Efeito de hover para o cartão da planta */
 .plant-card:hover {
   transform: translateY(-8px); /* Move 8px para cima */
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
 }
+
+/* Estilo para os slides de plantas (provavelmente em um carrossel) */
 .plant-slide {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(76, 175, 80, 0.1);
@@ -117,7 +125,7 @@ a {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
 }
 
-/* Imagem da planta */
+/* Estilização da imagem da planta dentro do cartão */
 .plant-image {
   width: 100%;
   height: 200px; /* pode ajustar se quiser */
@@ -128,7 +136,7 @@ a {
   aspect-ratio: 4 / 3;
 }
 
-/* Informação sobre a planta */
+/* Contêiner para as informações textuais da planta */
 .plant-info {
   background-size: cover;
   background-position: center;
@@ -137,15 +145,15 @@ a {
   margin-left: 10px;
 }
 
-/* Nome da planta */
+/* Estilo para o nome popular da planta */
 .plant-name {
   font-size: 1.3rem; /* Fonte de aproximadamente 21px */
   font-weight: 600; /* Deixa a fonte mais larga */
   color: #1b5e20; /* Deixa a fonte verde escuro */
-  margin-bottom: 5px; /* Adiciona uma margem de 8 pixels abaixo */
+  margin: 7px 7px 3px 7px; /* Adiciona uma margem de 8 pixels abaixo */
 }
 
-/* Nome científico */
+/* Estilo para o nome científico da planta */
 .plant-scientific {
   font-style: italic; /* Fonte em Itálico (padrão científico) */
   color: #4caf50; /* Deixa a fonte verde */
@@ -166,7 +174,7 @@ a {
   line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
 }
 
-/* Rodapé do site */
+/* Estilização do rodapé fixo do site */
 footer {
   background: linear-gradient(
     135deg,
@@ -175,14 +183,13 @@ footer {
   ); /* Fundo com um gradiente de verde claro para um verde mais escuro */
   color: white; /* Fonte dos textos branca */
   text-align: center; /* Alinha os textos no centro do rodapé */
-  padding: 2rem 0; /* Cria uma distância entre o rodapé e o resto da página */
-  /* margin-top: 4rem; Margem no topo do rodapé */
+  padding: 2rem 0;
   bottom: 0;
   position: fixed;
   width: 100%;
 }
 
-/* Ajuste para o tamanho de tela */
+/* Media Query para telas menores (responsividade) */
 @media screen and (max-width: 701px) {
   .nav-links {
     display: none;
@@ -197,6 +204,7 @@ footer {
   }
 }
 
+/* Estilização do contêiner do carrossel */
 .carousel {
   width: 700px;
   height: auto;
@@ -206,6 +214,7 @@ footer {
   margin-top: 30px;
 }
 
+/* Contêiner dos slides que permite rolagem horizontal */
 .slides {
   display: flex;
   border-radius: 20px;
@@ -213,11 +222,10 @@ footer {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 
-  /*
-  scroll-snap-points-x: repeat(300px);
-  scroll-snap-type: mandatory;
-  */
+  /* scroll-snap-points-x: repeat(300px); */
+  /* scroll-snap-type: mandatory; */
 }
+/* Estilização da barra de rolagem para navegadores Webkit (Chrome, Safari) */
 .slides::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -235,6 +243,8 @@ footer {
 .slides::-webkit-scrollbar-track {
   background: transparent;
 }
+
+/* Estilização de cada slide individual dentro do carrossel */
 .slides > div {
   scroll-snap-align: start;
   flex-shrink: 0;
@@ -248,11 +258,13 @@ footer {
   font-size: 100px;
 }
 
+/* Efeito de hover para os slides */
 .slides > div:hover {
   transform: scale(0.95);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Estilo genérico para imagens, fazendo com que cubram seu contêiner */
 img {
   object-fit: cover;
   position: absolute;
@@ -262,6 +274,7 @@ img {
   height: 100%;
 }
 
+/* Estilização dos botões/indicadores de navegação do carrossel */
 .carousel > a {
   font-family: fantasy;
   display: inline-flex;
@@ -276,6 +289,8 @@ img {
   position: relative;
   transition: all 0.1s ease;
 }
+
+/* Efeitos de interação para os botões do carrossel */
 .carousel > a:active {
   top: 1px;
 }
@@ -287,6 +302,7 @@ img {
   background-color: rgb(2, 48, 13);
 }
 
+/* Estilização do logo do site, posicionado no canto superior esquerdo */
 .site_logo {
   width: 60px;
   height: 60px;
@@ -298,11 +314,12 @@ img {
   transition: all 0.5s ease;
 }
 
+/* Efeito de hover para o logo */
 .site_logo:hover {
   transform: scale(1.1);
 }
 
-/* Don't need button navigation */
+/* Garante que a navegação do carrossel seja exibida se o navegador suportar scroll-snap */
 @supports (scroll-snap-type) {
   .carousel > a {
     display: flex;

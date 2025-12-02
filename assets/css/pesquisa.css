@@ -1,5 +1,6 @@
 /* ===== Página de Pesquisa ===== */
 
+/* Estiliza o corpo da página de pesquisa, centralizando o conteúdo verticalmente. */
 body.pesquisa {
   display: flex;
   flex-direction: column;
@@ -7,22 +8,22 @@ body.pesquisa {
   margin: 0;
 }
 
-/* Título */
+/* Define as margens para o título principal da página. */
 #titulo {
   margin-top: 40px;
-  margin-bottom: 35px; /* Espaçamento maior para afastar o formulário */
+  margin-bottom: 35px;
 }
 
-/* Formulário de pesquisa */
+/* Estiliza o contêiner do formulário de pesquisa, alinhando os itens. */
 .form-pesquisa {
   display: flex;
-  gap: 18px; /* Mais espaço entre os elementos */
+  gap: 18px;
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
 }
 
-/* Dropdown (select) */
+/* Estiliza os menus suspensos (select). */
 .dropdown {
   padding: 14px 18px;
   border-radius: 10px;
@@ -32,14 +33,15 @@ body.pesquisa {
   font-size: 1.2rem;
   cursor: pointer;
   transition: 0.2s ease;
-  min-width: 190px; /* Tamanho maior */
+  min-width: 190px;
 }
 
+/* Efeito de hover para o menu suspenso. */
 .dropdown:hover {
   border-color: #4caf50;
 }
 
-/* Campo de texto da pesquisa */
+/* Estiliza o campo de texto da pesquisa. */
 .form-pesquisa input[type="text"] {
   padding: 14px 18px;
   width: 340px; /* Caixa maior */
@@ -49,12 +51,13 @@ body.pesquisa {
   transition: 0.2s ease;
 }
 
+/* Efeito de foco para o campo de texto. */
 .form-pesquisa input[type="text"]:focus {
   outline: none;
   border-color: #4caf50;
 }
 
-/* Botão de pesquisa */
+/* Estilização do botão de pesquisa. */
 .btn-pesquisar {
   background: #4caf50;
   color: white;
@@ -66,6 +69,7 @@ body.pesquisa {
   transition: 0.3s ease;
 }
 
+/* Efeito de hover para o botão de pesquisa. */
 .btn-pesquisar:hover {
   background: #3c8f40;
   transform: translateY(-2px);
