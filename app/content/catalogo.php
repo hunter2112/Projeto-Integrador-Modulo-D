@@ -60,9 +60,12 @@ $result = $db->query("SELECT * FROM plantas");
                 $descricao = $row['descricao'] ?? "Sem descrição cadastrada.";
 
                 // Gera um hash MD5 do nome da planta para criar um nome de arquivo de imagem único.
-                $hash = md5($nome);
-                $imgPath = "assets/img/plantas/{$hash}.jpg";
 
+                $nomeNorm = iconv('UTF-8', 'ASCII//TRANSLIT', $nome);
+                $nomeNorm = preg_replace('/[^A-Za-z0-9]/', '', $nomeNorm);
+                $nomeNorm = strtolower($nomeNorm);
+                $hash = md5($nomeNorm);
+                $imgPath = "assets/img/plantas/{$hash}.jpg";
                 // Verifica se o arquivo de imagem existe; se não, usa uma imagem padrão.
                 if (!file_exists($imgPath)) {
                     $imgPath = "assets/img/default_plant.jpg";

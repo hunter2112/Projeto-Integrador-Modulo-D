@@ -124,6 +124,7 @@ label {
 }
 
 .erro {
+  margin: 0 auto auto auto;
   color: #ffd4d4;
   padding: 10px;
   background: #8b1e1e;

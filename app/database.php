@@ -83,65 +83,33 @@ class Database {
      | MÉTODO query() — SELECT simples sem parâmetros
      |-------------------------------------------------------------
     */
-    public function query(string $sql) {
-
-        $result = $this->conn->query($sql);
-
-        // Se houve erro na query, lança exceção
-        if ($this->conn->error) {
-            throw new Exception("Query Error: " . $this->conn->error);
-        }
-
-        return $result; // Retorna o resultado do SELECT
+    public function query(string $sql)
+    {
+        return $this->conn->query($sql);
     }
 
-    /*
-     |-------------------------------------------------------------
-     | MÉTODO prepare() — SELECT com parâmetros (prepared statement)
-     |-------------------------------------------------------------
-    */
-    public function prepare(string $sql, string $types, array $params) {
+    public function prepare(string $sql, string $types, array $params)
+    {
+        $stmt = $this->conn->prepare($sql);
+        if (!$stmt) throw new Exception("Erro prepare(): " . $this->conn->error);
 
-        // Prepara a query
-        $this->stmt = $this->conn->prepare($sql);
-
-        // Caso falhe
-        if (!$this->stmt) {
-            throw new Exception("Prepare failed: " . $this->conn->error);
-        }
-
-        // Faz o bind dos parâmetros ("s", "i", etc.)
-        $this->stmt->bind_param($types, ...$params);
-
-        // Executa
-        $this->stmt->execute();
-
-        // Retorna o resultado (apenas para SELECT)
-        return $this->stmt->get_result();
+        $stmt->bind_param($types, ...$params);
+        $stmt->execute();
+        return $stmt->get_result();
     }
 
-    /*
-     |-------------------------------------------------------------
-     | MÉTODO execute() — INSERT, UPDATE ou DELETE (com bind)
-     |-------------------------------------------------------------
-    */
-    public function execute(string $sql, string $types, array $params): int {
+    public function execute(string $sql, string $types, array $params)
+    {
+        $stmt = $this->conn->prepare($sql);
+        if (!$stmt) throw new Exception("Erro execute(): " . $this->conn->error);
 
-        // Prepara o comando
-        $this->stmt = $this->conn->prepare($sql);
+        $stmt->bind_param($types, ...$params);
 
-        if (!$this->stmt) {
-            throw new Exception("Prepare failed: " . $this->conn->error);
+        if (!$stmt->execute()) {
+            throw new Exception("Erro ao executar SQL: " . $stmt->error);
         }
 
-        // Faz o bind dos valores
-        $this->stmt->bind_param($types, ...$params);
-
-        // Executa o comando
-        $this->stmt->execute();
-
-        // Retorna quantas linhas foram afetadas
-        return $this->stmt->affected_rows;
+        return true;
     }
 
     /*
@@ -161,4 +129,5 @@ class Database {
     public function close(): void {
         $this->conn->close();
     }
+
 }

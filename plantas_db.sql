@@ -19,7 +19,7 @@ CREATE TABLE plantas (
     descricao TEXT,
     caracteristicas TEXT,
     uso TEXT,
-    imagem VARCHAR(255)  
+    imagem VARBINARY(255)  
 );
 
 -- Inserir dados

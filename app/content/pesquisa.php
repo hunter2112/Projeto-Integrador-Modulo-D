@@ -100,7 +100,10 @@ if (isset($_GET['q'], $_GET['tipo'])) {
             $descricao = $row['descricao'] ?? "Sem descrição cadastrada.";
 
             // Gera o caminho da imagem com base em um hash do nome, ou usa uma imagem padrão.
-            $hash = md5($nome);
+            $nomeNorm = iconv('UTF-8', 'ASCII//TRANSLIT', $nome);
+            $nomeNorm = preg_replace('/[^A-Za-z0-9]/', '', $nomeNorm);
+            $nomeNorm = strtolower($nomeNorm);
+            $hash = md5($nomeNorm);
             $imgPath = "assets/img/plantas/{$hash}.jpg";
 
             if (!file_exists($imgPath)) {
