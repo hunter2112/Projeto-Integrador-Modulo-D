@@ -72,7 +72,7 @@ a {
 .nav-item {
   position: relative; /* Permite posicionar o .underline em relação a este container */
   display: inline-block; /* Faz com que os itens fiquem lado a lado */
-  margin: 0 15px; /* Mantém o espaçamento que você pediu */
+  margin-left: 1075px; /* Mantém o espaçamento que você pediu */
 }
 
 /* Efeito de sublinhado */
@@ -89,7 +89,7 @@ a {
 .plant-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  gap: 30px;
   padding: 30px;
   width: 100%;
   max-width: 2000px;
@@ -105,7 +105,7 @@ a {
   transition: all 0.3s ease; /*Adiciona transições suaves*/
   border: 1px solid rgba(76, 175, 80, 0.1); /*Adiciona uma borda sutil*/
   width: 100%;
-  max-width: 800px;
+  max-width: 500px;
 }
 
 /* Efeito de hover para o cartão da planta */
@@ -265,7 +265,7 @@ footer {
 }
 
 /* Estilo genérico para imagens, fazendo com que cubram seu contêiner */
-img {
+.plant-card img {
   object-fit: cover;
   position: absolute;
   top: 0;
@@ -306,7 +306,6 @@ img {
 .site_logo {
   width: 60px;
   height: 60px;
-  margin-top: 3px;
   margin-left: 50px;
   position: fixed;
   top: 0;
@@ -317,6 +316,19 @@ img {
 /* Efeito de hover para o logo */
 .site_logo:hover {
   transform: scale(1.1);
+}
+
+.img_titulo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_titulo img {
+  width: 650px;
+  height: 400px;
+  position: static; /* garante que não herde position:absolute */
 }
 
 /* Garante que a navegação do carrossel seja exibida se o navegador suportar scroll-snap */

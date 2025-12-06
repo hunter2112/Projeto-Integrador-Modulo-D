@@ -64,7 +64,6 @@
   height: 200px;
   border-radius: 12px;
   object-fit: cover;
-  margin: 20px;
 }
 
 /* TEXTO */
@@ -72,7 +71,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  margin-left: 200px;
+  margin-left: 20px;
 }
 
 .modal-right h2 {
