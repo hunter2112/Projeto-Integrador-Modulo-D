@@ -1,63 +1,71 @@
 /* ===== Página de Pesquisa ===== */
 
-/* Estiliza o corpo da página de pesquisa, centralizando o conteúdo verticalmente. */
 body.pesquisa {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin: 0;
 }
 
-/* Define as margens para o título principal da página. */
+/* Título */
 #titulo {
   margin-top: 40px;
   margin-bottom: 35px;
 }
 
-/* Estiliza o contêiner do formulário de pesquisa, alinhando os itens. */
+/* ===== FORMULÁRIO DE PESQUISA ===== */
+
 .form-pesquisa {
   display: flex;
   gap: 18px;
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
+  flex-wrap: wrap; /* essencial para mobile */
+  width: 100%;
+  max-width: 900px;
+  padding: 0 15px;
+  margin: auto;
 }
 
-/* Estiliza os menus suspensos (select). */
+/* Select */
 .dropdown {
   padding: 14px 18px;
   border-radius: 10px;
   border: 2px solid #6e8b5d;
   background: #ffffff;
   color: #1b5e20;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: 0.2s ease;
-  min-width: 190px;
+  min-width: 180px;
+  flex: 1;
+  max-width: 260px;
 }
 
-/* Efeito de hover para o menu suspenso. */
 .dropdown:hover {
   border-color: #4caf50;
 }
 
-/* Estiliza o campo de texto da pesquisa. */
+/* Campo de texto */
 .form-pesquisa input[type="text"] {
   padding: 14px 18px;
-  width: 340px; /* Caixa maior */
   border-radius: 10px;
   border: 2px solid #6e8b5d;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   transition: 0.2s ease;
+  flex: 2;
+  min-width: 200px;
+  max-width: 420px;
 }
 
-/* Efeito de foco para o campo de texto. */
 .form-pesquisa input[type="text"]:focus {
   outline: none;
   border-color: #4caf50;
 }
 
-/* Estilização do botão de pesquisa. */
+/* Botão */
 .btn-pesquisar {
   background: #4caf50;
   color: white;
@@ -65,12 +73,48 @@ body.pesquisa {
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   transition: 0.3s ease;
+  min-width: 120px;
 }
 
-/* Efeito de hover para o botão de pesquisa. */
 .btn-pesquisar:hover {
   background: #3c8f40;
   transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .form-pesquisa {
+    gap: 12px;
+  }
+
+  .dropdown,
+  .form-pesquisa input[type="text"],
+  .btn-pesquisar {
+    font-size: 1rem;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .form-pesquisa {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 95%;
+  }
+
+  .dropdown,
+  .form-pesquisa input[type="text"],
+  .btn-pesquisar {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #titulo {
+    font-size: 1.6rem;
+    text-align: center;
+  }
 }

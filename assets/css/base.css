@@ -49,30 +49,76 @@ a {
   text-decoration: none;
 }
 
-/* Estilização da barra de navegação fixa no topo */
+/* ===== NAVBAR RESPONSIVA ===== */
+
 .navbar {
-  position: fixed; /* Fixa o elemento na tela */
-  top: 0; /* Alinha no topo */
-  left: 0; /* Garante que ocupe toda a largura */
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 70px;
   background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
-  font-size: 30px;
-  padding: 8px 0;
-  z-index: 1000; /* Garante que a navbar fique na frente de outros elementos */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  z-index: 1000;
 }
 
-/* Estilo padrão para links, definindo a cor do texto como branco */
-a {
-  text-decoration: none;
-  color: #ffffff;
+/* Logo */
+.nav-logo img {
+  width: 55px;
+  height: 55px;
 }
 
-/* Estilização dos itens de navegação (links) na navbar */
-.nav-item {
-  position: relative; /* Permite posicionar o .underline em relação a este container */
-  display: inline-block; /* Faz com que os itens fiquem lado a lado */
-  margin-left: 1075px; /* Mantém o espaçamento que você pediu */
+/* Links da navbar */
+
+/* ===== HAMBÚRGUER (mobile) ===== */
+.hamburger {
+  display: block;
+  font-size: 35px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 25%;
+  height: calc(100vh - 70px);
+  background: #1b5e20;
+  padding: 20px 0;
+  text-align: center;
+
+  /* ANIMAÇÃO */
+  transform: translateX();
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.nav-links a {
+  padding: 10px 0;
+  font-size: 1.4rem;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-links.show {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 0.6s ease;
+}
+/* ===== MOBILE ===== */
+@media (max-width: 800px) {
+  .nav-links {
+    width: 50%;
+  }
 }
 
 /* Efeito de sublinhado */
@@ -93,7 +139,7 @@ a {
   padding: 30px;
   width: 100%;
   max-width: 2000px;
-  margin: 30px auto 100px auto;
+  margin: 20px auto 100px auto;
 }
 
 /* Estilização individual do cartão da planta */
@@ -191,10 +237,10 @@ footer {
 
 /* Media Query para telas menores (responsividade) */
 @media screen and (max-width: 701px) {
-  .nav-links {
-    display: none;
+  .img_titulo {
+    max-width: 450px;
+    margin: auto;
   }
-
   h1 {
     font-size: 2.5rem; /* 40px, um pouco menor que os 50px originais */
   }
@@ -202,66 +248,6 @@ footer {
   .plant-grid {
     grid-template-columns: 1fr;
   }
-}
-
-/* Estilização do contêiner do carrossel */
-.carousel {
-  width: 700px;
-  height: auto;
-  text-align: center;
-  overflow: hidden;
-  margin: auto;
-  margin-top: 30px;
-}
-
-/* Contêiner dos slides que permite rolagem horizontal */
-.slides {
-  display: flex;
-  border-radius: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-
-  /* scroll-snap-points-x: repeat(300px); */
-  /* scroll-snap-type: mandatory; */
-}
-/* Estilização da barra de rolagem para navegadores Webkit (Chrome, Safari) */
-.slides::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-  margin: 5px;
-}
-.slides::-webkit-scrollbar-thumb {
-  margin-top: 10px;
-  background-color: #1b5e20;
-  border-radius: 10px;
-}
-.slides::-webkit-scrollbar-thumb:hover {
-  background-color: #1b5e20;
-}
-
-.slides::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* Estilização de cada slide individual dentro do carrossel */
-.slides > div {
-  scroll-snap-align: start;
-  flex-shrink: 0;
-  width: 700px;
-  height: 370px;
-  margin-right: 50px;
-  background-color: #ffffff;
-  transform-origin: center center;
-  transition: all ease 0.5s;
-  position: relative;
-  font-size: 100px;
-}
-
-/* Efeito de hover para os slides */
-.slides > div:hover {
-  transform: scale(0.95);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Estilo genérico para imagens, fazendo com que cubram seu contêiner */
@@ -272,34 +258,6 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-/* Estilização dos botões/indicadores de navegação do carrossel */
-.carousel > a {
-  font-family: fantasy;
-  display: inline-flex;
-  width: 2.5rem;
-  height: 0.8rem;
-  background: #1b5e1f7c;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  border-radius: 30%;
-  margin-top: 5px;
-  position: relative;
-  transition: all 0.1s ease;
-}
-
-/* Efeitos de interação para os botões do carrossel */
-.carousel > a:active {
-  top: 1px;
-}
-.carousel > a:hover {
-  background-color: #1b5e20;
-  transform: scaleX(1.1);
-}
-.carousel > a:focus {
-  background-color: rgb(2, 48, 13);
 }
 
 /* Estilização do logo do site, posicionado no canto superior esquerdo */
@@ -329,13 +287,4 @@ footer {
   width: 650px;
   height: 400px;
   position: static; /* garante que não herde position:absolute */
-}
-
-/* Garante que a navegação do carrossel seja exibida se o navegador suportar scroll-snap */
-@supports (scroll-snap-type) {
-  .carousel > a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 }

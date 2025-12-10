@@ -63,7 +63,7 @@ $router->post('/cadastrar_planta', [CadastroController::class, 'salvar']);
 
     <!-- Mostrar o FORMULÁRIO DE PESQUISA APENAS na HOME (path == '/') -->
     <?php if ($path === '/'): ?>
-      <form action="/pesquisa" method="GET" class="form-pesquisa" style="margin: 18px 0;">
+      <form action="/pesquisa" method="GET" class="form-pesquisa">
         <select id="tipoPesquisaHome" name="tipo" class="dropdown" required>
           <option value="nome">Pesquisar por Nome</option>
           <option value="uso">Pesquisar por Uso</option>
@@ -172,6 +172,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-  <script src="scripts/script.js"></script>
+  <script src="scripts/underline.js"></script>
+
+  <script>
+    document.getElementById("hamburgerBtn").addEventListener("click", function () {
+    document.getElementById("navLinks").classList.toggle("show");
+});
+</script>
+
 </body>
 </html>
