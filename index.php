@@ -1,13 +1,20 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
+// NOVO: Carregar variáveis de ambiente do .env
+require_once __DIR__ . '/app/env_loader.php';
+use App\EnvLoader;
+EnvLoader::load(__DIR__ . '/.env');
+
 // carregar classes/rotas/DB (ajuste caminhos se necessário)
 require_once __DIR__ . '/app/router.php';
 require_once __DIR__ . '/app/database.php';
 require_once __DIR__ . '/app/controllers/cadastro_controller.php';
+require_once __DIR__ . '/app/controllers/reconhecimento_controller.php';
 
 use App\Router;
 use App\CadastroController;
+use App\ReconhecimentoController;
 
 // descobrir caminho atual (normalizado, sem querystring)
 $rawPath = $_SERVER['REQUEST_URI'] ?? '/';
@@ -19,7 +26,6 @@ $router = new Router();
 // rota: página inicial (ex.: catálogo ou home)
 $router->get('/', function () {
     // escolhi mostrar o catálogo por padrão na home
-
 });
 
 // rota: pesquisa (renderiza resultados)
@@ -34,6 +40,14 @@ $router->get('/cadastro', function () {
 
 // rota: processar cadastro (POST)
 $router->post('/cadastrar_planta', [CadastroController::class, 'salvar']);
+
+// ======== ROTAS DE RECONHECIMENTO ========
+// rota: página de reconhecimento
+$router->get('/reconhecimento', [ReconhecimentoController::class, 'pagina']);
+
+// rota: API para processar reconhecimento (POST)
+$router->post('/api/reconhecer', [ReconhecimentoController::class, 'analisar']);
+// =========================================
 
 ?>
 <!DOCTYPE html>
@@ -63,7 +77,7 @@ $router->post('/cadastrar_planta', [CadastroController::class, 'salvar']);
 
     <!-- Mostrar o FORMULÁRIO DE PESQUISA APENAS na HOME (path == '/') -->
     <?php if ($path === '/'): ?>
-      <form action="/pesquisa" method="GET" class="form-pesquisa">
+      <form action="/pesquisa" method="GET" class="form-pesquisa" style="margin: 18px 0;">
         <select id="tipoPesquisaHome" name="tipo" class="dropdown" required>
           <option value="nome">Pesquisar por Nome</option>
           <option value="uso">Pesquisar por Uso</option>
@@ -171,14 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
   <script src="scripts/underline.js"></script>
-
   <script>
     document.getElementById("hamburgerBtn").addEventListener("click", function () {
     document.getElementById("navLinks").classList.toggle("show");
 });
 </script>
-
 </body>
 </html>

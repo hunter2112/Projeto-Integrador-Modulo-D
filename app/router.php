@@ -69,13 +69,24 @@ class Router
          |---------------------------------------------------------
         */
         if (is_array($callback)) {
-            [$class, $method] = $callback;
+            [$class, $methodName] = $callback;
 
-            // Cria a instância do controller
-            $controller = new $class();
-
-            // Executa o método indicado
-            return $controller->$method();
+            // NOVO: Verificar se o método é estático
+            if (method_exists($class, $methodName)) {
+                $reflection = new \ReflectionMethod($class, $methodName);
+                
+                if ($reflection->isStatic()) {
+                    // Método estático: chamar diretamente
+                    return $class::$methodName();
+                } else {
+                    // Método não-estático: instanciar e chamar
+                    $controller = new $class();
+                    return $controller->$methodName();
+                }
+            } else {
+                http_response_code(500);
+                return "Erro: Método {$methodName} não encontrado na classe {$class}";
+            }
         }
         
         /*
