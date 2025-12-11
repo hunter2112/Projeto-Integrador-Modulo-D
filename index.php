@@ -77,7 +77,7 @@ $router->post('/api/reconhecer', [ReconhecimentoController::class, 'analisar']);
 
     <!-- Mostrar o FORMULÁRIO DE PESQUISA APENAS na HOME (path == '/') -->
     <?php if ($path === '/'): ?>
-      <form action="/pesquisa" method="GET" class="form-pesquisa" style="margin: 18px 0;">
+      <form action="/pesquisa" method="GET" class="form-pesquisa">
         <select id="tipoPesquisaHome" name="tipo" class="dropdown" required>
           <option value="nome">Pesquisar por Nome</option>
           <option value="uso">Pesquisar por Uso</option>
