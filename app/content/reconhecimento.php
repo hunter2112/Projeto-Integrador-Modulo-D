@@ -1,6 +1,6 @@
 <div class="reconhecimento-container">
     <div class="reconhecimento-header">
-        <h1>🌿 Reconhecimento de Plantas</h1>
+        <h1>Reconhecimento de Plantas</h1>
         <p>Faça upload de uma foto para identificar a planta usando inteligência artificial</p>
     </div>
 
@@ -23,7 +23,7 @@
         </div>
         <img id="preview-img" src="" alt="Preview" class="preview-img">
         <button type="button" class="btn-analisar" onclick="analisarImagem()">
-            🔍 Identificar Planta
+            Identificar Planta
         </button>
     </div>
 
@@ -35,44 +35,30 @@
 
     <!-- Resultados -->
     <div id="resultados-area" class="resultados-area" style="display: none;">
-        <h2>📊 Resultados da Análise</h2>
+        <h2>Resultados da Análise</h2>
         
         <!-- Labels de Planta -->
         <div id="labels-planta-section" class="resultado-secao" style="display: none;">
-            <h3>🌱 Características Identificadas</h3>
+            <h3>Características Identificadas</h3>
             <div id="labels-planta-lista" class="labels-lista"></div>
         </div>
 
         <!-- Possíveis Espécies -->
         <div id="especies-section" class="resultado-secao" style="display: none;">
-            <h3>🔬 Possíveis Identificações</h3>
+            <h3>Possíveis Identificações</h3>
             <div id="especies-lista" class="especies-lista"></div>
         </div>
 
         <!-- Todas as Labels -->
         <div id="labels-section" class="resultado-secao">
-            <h3>🏷️ Todas as Identificações</h3>
+            <h3>Todas as Identificações</h3>
             <div id="labels-lista" class="labels-grid"></div>
         </div>
 
         <!-- Cores Dominantes -->
         <div id="cores-section" class="resultado-secao" style="display: none;">
-            <h3>🎨 Cores Predominantes</h3>
+            <h3>Cores Predominantes</h3>
             <div id="cores-lista" class="cores-lista"></div>
-        </div>
-    </div>
-
-    <!-- Instruções -->
-    <div class="instrucoes">
-        <h3>📝 Como usar:</h3>
-        <ol>
-            <li>Faça upload de uma foto clara da planta</li>
-            <li>Clique em "Identificar Planta"</li>
-            <li>Aguarde a análise da inteligência artificial</li>
-            <li>Veja os resultados com características e possíveis espécies</li>
-        </ol>
-        <div class="aviso">
-            <strong>⚠️ Dica:</strong> Para melhores resultados, tire fotos com boa iluminação e foque nas folhas ou flores da planta.
         </div>
     </div>
 </div>
