@@ -28,15 +28,22 @@
     <!-- Preview da Imagem -->
     <div id="preview-area" class="preview-area" style="display: none;">
         <div class="preview-header">
-            <h3>Imagem Carregada</h3>
+            <h3>Imagem Carregada</h3> 
+        </div>
+        <div class="botoes">
             <button type="button" class="btn-remover" onclick="limparImagem()">Remover</button>
         </div>
+        
         <img id="preview-img" src="" alt="Preview" class="preview-img">
-        <button type="button" class="btn-analisar" onclick="analisarImagem()">
-            🔍 Identificar Planta
+
+    </div>
+    <div class="botoes">
+        <button type="button" id="btn-analisar" class="btn-analisar hidden"  onclick="analisarImagem()" style="margin: 0px auto 100px auto;">
+             Identificar Planta
         </button>
     </div>
 
+         
     <!-- Loading -->
     <div id="loading-area" class="loading-area" style="display: none;">
         <div class="spinner"></div>
@@ -107,16 +114,18 @@ document.getElementById('input-imagem').addEventListener('change', function(e) {
 
 function processarImagem(arquivo) {
     imagemSelecionada = arquivo;
-    
+
     const reader = new FileReader();
     reader.onload = function(e) {
         document.getElementById('preview-img').src = e.target.result;
         document.getElementById('upload-area').style.display = 'none';
         document.getElementById('preview-area').style.display = 'block';
         document.getElementById('resultados-area').style.display = 'none';
+        document.getElementById('btn-analisar').classList.remove('hidden');
     };
     reader.readAsDataURL(arquivo);
 }
+
 
 function limparImagem() {
     imagemSelecionada = null;
@@ -124,6 +133,7 @@ function limparImagem() {
     document.getElementById('upload-area').style.display = 'block';
     document.getElementById('preview-area').style.display = 'none';
     document.getElementById('resultados-area').style.display = 'none';
+    document.getElementById('btn-analisar').classList.add('hidden');
 }
 
 async function analisarImagem() {

@@ -164,17 +164,6 @@ a {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
 }
 
-/* Estilo para os slides de plantas (provavelmente em um carrossel) */
-.plant-slide {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(76, 175, 80, 0.1);
-  transition: all 0.3s ease;
-}
-.plant-slide:hover {
-  transform: scale(0.98); /* Move 8px para cima */
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
-}
-
 /* Estilização da imagem da planta dentro do cartão */
 .plant-image {
   width: 100%;

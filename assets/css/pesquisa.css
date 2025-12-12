@@ -8,11 +8,6 @@ body.pesquisa {
   margin: 0;
 }
 
-/* Título */
-#titulo {
-  margin-top: 40px;
-  margin-bottom: 35px;
-}
 
 /* ===== FORMULÁRIO DE PESQUISA ===== */
 
@@ -21,12 +16,11 @@ body.pesquisa {
   gap: 18px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
   flex-wrap: wrap; /* essencial para mobile */
   width: 100%;
   max-width: 900px;
   padding: 0 15px;
-  margin: auto;
+  margin: 0px auto 40px auto;
 }
 
 /* Select */
@@ -113,8 +107,3 @@ body.pesquisa {
     max-width: 100%;
   }
 
-  #titulo {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-}
