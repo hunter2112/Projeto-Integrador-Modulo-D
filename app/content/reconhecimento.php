@@ -1,6 +1,16 @@
-<div class="reconhecimento-container">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/recon.css">
+</head>
+<body>
+    <div class="reconhecimento-container">
     <div class="reconhecimento-header">
-        <h1>🌿 Reconhecimento de Plantas</h1>
+        <h1>Reconhecimento de Plantas</h1>
         <p>Faça upload de uma foto para identificar a planta usando inteligência artificial</p>
     </div>
 
@@ -19,11 +29,11 @@
     <div id="preview-area" class="preview-area" style="display: none;">
         <div class="preview-header">
             <h3>Imagem Carregada</h3>
-            <button type="button" class="btn-remover" onclick="limparImagem()">✖ Remover</button>
+            <button type="button" class="btn-remover" onclick="limparImagem()">Remover</button>
         </div>
         <img id="preview-img" src="" alt="Preview" class="preview-img">
         <button type="button" class="btn-analisar" onclick="analisarImagem()">
-            🔍 Identificar Planta
+             Identificar Planta
         </button>
     </div>
 
@@ -35,245 +45,32 @@
 
     <!-- Resultados -->
     <div id="resultados-area" class="resultados-area" style="display: none;">
-        <h2>📊 Resultados da Análise</h2>
+        <h2>Resultados da Análise</h2>
         
         <!-- Labels de Planta -->
         <div id="labels-planta-section" class="resultado-secao" style="display: none;">
-            <h3>🌱 Características Identificadas</h3>
+            <h3>Características Identificadas</h3>
             <div id="labels-planta-lista" class="labels-lista"></div>
         </div>
 
         <!-- Possíveis Espécies -->
         <div id="especies-section" class="resultado-secao" style="display: none;">
-            <h3>🔬 Possíveis Identificações</h3>
+            <h3>Possíveis Identificações</h3>
             <div id="especies-lista" class="especies-lista"></div>
         </div>
 
         <!-- Todas as Labels -->
         <div id="labels-section" class="resultado-secao">
-            <h3>🏷️ Todas as Identificações</h3>
+            <h3>Todas as Identificações</h3>
             <div id="labels-lista" class="labels-grid"></div>
         </div>
 
         <!-- Cores Dominantes -->
         <div id="cores-section" class="resultado-secao" style="display: none;">
-            <h3>🎨 Cores Predominantes</h3>
+            <h3>Cores Predominantes</h3>
             <div id="cores-lista" class="cores-lista"></div>
         </div>
     </div>
-
-    <!-- Instruções -->
-    <div class="instrucoes">
-        <h3>📝 Como usar:</h3>
-        <ol>
-            <li>Faça upload de uma foto clara da planta</li>
-            <li>Clique em "Identificar Planta"</li>
-            <li>Aguarde a análise da inteligência artificial</li>
-            <li>Veja os resultados com características e possíveis espécies</li>
-        </ol>
-        <div class="aviso">
-            <strong>⚠️ Dica:</strong> Para melhores resultados, tire fotos com boa iluminação e foque nas folhas ou flores da planta.
-        </div>
-    </div>
-</div>
-
-<style>
-.reconhecimento-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.reconhecimento-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.reconhecimento-header h1 {
-    color: #2d5016;
-    margin-bottom: 10px;
-}
-
-.upload-area {
-    border: 3px dashed #4a7c2c;
-    border-radius: 15px;
-    padding: 60px 20px;
-    text-align: center;
-    background: #f0f8f0;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.upload-area:hover {
-    background: #e8f5e8;
-    border-color: #2d5016;
-}
-
-.upload-icon {
-    font-size: 60px;
-    margin-bottom: 20px;
-}
-
-.btn-upload, .btn-analisar {
-    background: #4a7c2c;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background 0.3s;
-}
-
-.btn-upload:hover, .btn-analisar:hover {
-    background: #2d5016;
-}
-
-.preview-area {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.preview-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.btn-remover {
-    background: #dc3545;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.btn-remover:hover {
-    background: #c82333;
-}
-
-.preview-img {
-    max-width: 100%;
-    max-height: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.loading-area {
-    text-align: center;
-    padding: 40px;
-}
-
-.spinner {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #4a7c2c;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 20px;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.resultados-area {
-    margin-top: 30px;
-}
-
-.resultado-secao {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.labels-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.label-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
-    background: #f0f8f0;
-    border-radius: 8px;
-}
-
-.label-badge {
-    background: #4a7c2c;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.labels-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-.label-grid-item {
-    background: #f8f9fa;
-    padding: 12px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.especies-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.especie-item {
-    padding: 12px;
-    background: #e3f2fd;
-    border-radius: 8px;
-    border-left: 4px solid #2196f3;
-}
-
-.cores-lista {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.cor-item {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    border: 2px solid #ddd;
-}
-
-.instrucoes {
-    background: #fff9e6;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-    border-left: 4px solid #ffc107;
-}
-
-.aviso {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 15px;
-}
-</style>
 
 <script>
 let imagemSelecionada = null;
@@ -409,3 +206,5 @@ function exibirResultados(dados) {
     document.getElementById('resultados-area').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 </script>
+</body>
+</html>

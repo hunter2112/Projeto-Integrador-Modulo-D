@@ -7,7 +7,7 @@
     <button class="hamburger" id="hamburgerBtn">&#9776;</button>
 
     <div class="nav-links" id="navLinks">
-        <a class="navlink" href="/reconhecimento">🔍 Reconhecer Planta</a>
+        <a class="navlink" href="/reconhecimento">Reconhecer Planta</a>
         <a class="navlink" href="/cadastro">Cadastro</a>
     </div>
 
