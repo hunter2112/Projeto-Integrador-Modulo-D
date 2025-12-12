@@ -33,7 +33,7 @@
         </div>
         <img id="preview-img" src="" alt="Preview" class="preview-img">
         <button type="button" class="btn-analisar" onclick="analisarImagem()">
-             Identificar Planta
+            🔍 Identificar Planta
         </button>
     </div>
 
@@ -71,6 +71,8 @@
             <div id="cores-lista" class="cores-lista"></div>
         </div>
     </div>
+
+</div>
 
 <script>
 let imagemSelecionada = null;
